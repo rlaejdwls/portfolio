@@ -1,0 +1,42 @@
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Form2.resources
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Properties.Resources.resources
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\bin\Debug\SumaPhoneServer.exe
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\bin\Debug\SumaPhoneServer.pdb
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.exe
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.pdb
+C:\Users\황의택\AppData\Local\Temporary Projects\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.frmServer.resources
+C:\Users\황의택\documents\visual studio 2010\Projects\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.exe
+C:\Users\황의택\documents\visual studio 2010\Projects\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.pdb
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.exe
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.pdb
+H:\public\IDE\C\project\C#\SumaPhoneServer\bin\Debug\SumaPhoneServer.exe
+H:\public\IDE\C\project\C#\SumaPhoneServer\bin\Debug\SumaPhoneServer.pdb
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.frmServer.resources
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Form2.resources
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Properties.Resources.resources
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.exe
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.pdb
+F:\public\IDE\C\project\C#\SumaPhoneServer\bin\Debug\SumaPhoneServer.exe
+F:\public\IDE\C\project\C#\SumaPhoneServer\bin\Debug\SumaPhoneServer.pdb
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.frmServer.resources
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Form2.resources
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Properties.Resources.resources
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Debug\GenerateResource.write.1.tlog
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.exe
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.pdb
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\bin\Debug\SumaPhoneServer.exe
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\bin\Debug\SumaPhoneServer.pdb
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.frmServer.resources
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Form2.resources
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\SumaPhoneServer.Properties.Resources.resources
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\GenerateResource.read.1.tlog
+I:\public\IDE\C\project\C#\SumaPhoneServer\SumaPhoneServer\obj\x86\Debug\GenerateResource.write.1.tlog

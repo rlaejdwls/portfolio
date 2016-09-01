@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+	<TextView
+	    android:id="@+id/txtIp"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/ip"
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	<EditText
+	    android:id="@+id/edtxtIp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:ems="10"
+	    android:text="@string/tmp_ip"
+	    android:inputType="date" />
+	
+	<TextView
+	    android:id="@+id/txtPort"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/port"
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	<EditText
+	    android:id="@+id/edtxtPort"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:ems="10"
+	    android:text="@string/tmp_port" 
+	    android:inputType="number" />
+	
+	<Button
+	    android:id="@+id/btnConnect"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/connect" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\ResolveAssemblyReference.cache
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\SumaPhoneServer.frmServer.resources
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\SumaPhoneServer.Form2.resources
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\SumaPhoneServer.Properties.Resources.resources
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\GenerateResource.read.1.tlog
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\GenerateResource.write.1.tlog
+F:\public\IDE\C\project\C#\SumaPhoneServer\bin\Release\SumaPhoneServer.exe
+F:\public\IDE\C\project\C#\SumaPhoneServer\bin\Release\SumaPhoneServer.pdb
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\SumaPhoneServer.exe
+F:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\SumaPhoneServer.pdb
+I:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\SumaPhoneServer.exe
+I:\public\IDE\C\project\C#\SumaPhoneServer\obj\x86\Release\SumaPhoneServer.pdb

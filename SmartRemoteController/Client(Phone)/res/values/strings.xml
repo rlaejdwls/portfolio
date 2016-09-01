@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- main.xml -->
+    <string name="app_name">SumaCon</string>
+    <string name="ip">IPAddress</string>
+    <string name="port">Port</string>
+    <string name="tmp_ip">192.168.</string>
+    <string name="tmp_port">7696</string>
+    <string name="connect">Connect</string>
+    
+<!-- Remocon.xml -->
+    <string name="left_click">LClick</string>
+    <string name="wheel_click">MClick</string>
+    <string name="right_click">RClick</string>
+    <string name="page_up">PgUp</string>
+    <string name="page_down">PgDn</string>
+    <string name="key_up">↑</string>
+    <string name="key_down">↓</string>
+    <string name="key_left"> ← </string>
+    <string name="key_right"> → </string>
+    <string name="key_space">Space</string>
+    <string name="left_move">LeftMoveCousor</string>
+    <string name="right_move">RightMoveCousor</string>
+    <string name="comma">&lt;</string>
+    <string name="period">&gt;</string>
+</resources>
