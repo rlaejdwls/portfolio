@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Define>
+  <Groups Display="Keyboard">
+    <!--Node Display="" Const="" Value="" /-->
+    <!--
+    * Virtual Keys, Standard Set
+    -->
+    <Node Display="LBUTTON" Const="LBUTTON" Value="0x01" />
+    <Node Display="RBUTTON" Const="RBUTTON" Value="0x02" />
+    <Node Display="CANCEL" Const="CANCEL" Value="0x03" />
+    <Node Display="MBUTTON" Const="MBUTTON" Value="0x04" />    <!-- NOT contiguous with L & RBUTTON -->
+    <Node Display="XBUTTON1" Const="XBUTTON1" Value="0x05" />    <!-- NOT contiguous with L & RBUTTON -->
+    <Node Display="XBUTTON2" Const="XBUTTON2" Value="0x06" />    <!-- NOT contiguous with L & RBUTTON -->
+    <Node Display="BACK" Const="BACK" Value="0x08" />
+    <Node Display="TAB" Const="TAB" Value="0x09" />
+    <!--
+    * 0x0A - 0x0B : reserved
+    -->
+    <Node Display="CLEAR" Const="CLEAR" Value="0x0C" />
+    <Node Display="RETURN" Const="RETURN" Value="0x0D" />
+    <Node Display="SHIFT" Const="SHIFT" Value="0x10" />
+    <Node Display="CONTROL" Const="CONTROL" Value="0x11" />
+    <Node Display="MENU" Const="MENU" Value="0x12" />
+    <Node Display="PAUSE" Const="PAUSE" Value="0x13" />
+    <Node Display="CAPITAL" Const="CAPITAL" Value="0x14" />
+    <Node Display="KANA" Const="KANA" Value="0x15" />
+    <Node Display="HANGEUL" Const="HANGEUL" Value="0x15" />    <!-- old name - should be here for compatibility -->
+    <Node Display="HANGUL" Const="HANGUL" Value="0x15" />
+    <Node Display="JUNJA" Const="JUNJA" Value="0x17" />
+    <Node Display="FINAL" Const="FINAL" Value="0x18" />
+    <Node Display="HANJA" Const="HANJA" Value="0x19" />
+    <Node Display="KANJI" Const="KANJI" Value="0x19" />
+    <Node Display="ESCAPE" Const="ESCAPE" Value="0x1B" />
+    <Node Display="CONVERT" Const="CONVERT" Value="0x1C" />
+    <Node Display="NONCONVERT" Const="NONCONVERT" Value="0x1D" />
+    <Node Display="ACCEPT" Const="ACCEPT" Value="0x1E" />
+    <Node Display="MODECHANGE" Const="MODECHANGE" Value="0x1F" />
+    <Node Display="SPACE" Const="SPACE" Value="0x20" />
+    <Node Display="PRIOR" Const="PRIOR" Value="0x21" />
+    <Node Display="NEXT" Const="NEXT" Value="0x22" />
+    <Node Display="END" Const="END" Value="0x23" />
+    <Node Display="HOME" Const="HOME" Value="0x24" />
+    <Node Display="LEFT" Const="LEFT" Value="0x25" />
+    <Node Display="UP" Const="UP" Value="0x26" />
+    <Node Display="RIGHT" Const="RIGHT" Value="0x27" />
+    <Node Display="DOWN" Const="DOWN" Value="0x28" />
+    <Node Display="SELECT" Const="SELECT" Value="0x29" />
+    <Node Display="PRINT" Const="PRINT" Value="0x2A" />
+    <Node Display="EXECUTE" Const="EXECUTE" Value="0x2B" />
+    <Node Display="SNAPSHOT" Const="SNAPSHOT" Value="0x2C" />
+    <Node Display="INSERT" Const="INSERT" Value="0x2D" />
+    <Node Display="DELETE" Const="DELETE" Value="0x2E" />
+    <Node Display="HELP" Const="HELP" Value="0x2F" />
+    <!--
+    * VK_0 - VK_9 are the same as ASCII '0' - '9' (0x30 - 0x39)
+    * 0x40 : unassigned
+    * VK_A - VK_Z are the same as ASCII 'A' - 'Z' (0x41 - 0x5A)
+    -->
+    <Node Display="LWIN" Const="LWIN" Value="0x5B" />
+    <Node Display="RWIN" Const="RWIN" Value="0x5C" />
+    <Node Display="APPS" Const="APPS" Value="0x5D" />
+    <!--
+    * 0x5E : reserved
+    -->
+    <Node Display="SLEEP" Const="SLEEP" Value="0x5F" />
+    <Node Display="NUMPAD0" Const="NUMPAD0" Value="0x60" />
+    <Node Display="NUMPAD1" Const="NUMPAD1" Value="0x61" />
+    <Node Display="NUMPAD2" Const="NUMPAD2" Value="0x62" />
+    <Node Display="NUMPAD3" Const="NUMPAD3" Value="0x63" />
+    <Node Display="NUMPAD4" Const="NUMPAD4" Value="0x64" />
+    <Node Display="NUMPAD5" Const="NUMPAD5" Value="0x65" />
+    <Node Display="NUMPAD6" Const="NUMPAD6" Value="0x66" />
+    <Node Display="NUMPAD7" Const="NUMPAD7" Value="0x67" />
+    <Node Display="NUMPAD8" Const="NUMPAD8" Value="0x68" />
+    <Node Display="NUMPAD9" Const="NUMPAD9" Value="0x69" />
+    <Node Display="MULTIPLY " Const="MULTIPLY " Value="0x6A" />
+    <Node Display="ADD" Const="ADD" Value="0x6B" />
+    <Node Display="SEPARATOR" Const="SEPARATOR" Value="0x6C" />
+    <Node Display="SUBTRACT" Const="SUBTRACT" Value="0x6D" />
+    <Node Display="DECIMAL" Const="DECIMAL" Value="0x6E" />
+    <Node Display="DIVIDE" Const="DIVIDE" Value="0x6F" />
+    <Node Display="F1" Const="F1" Value="0x70" />
+    <Node Display="F2" Const="F2" Value="0x71" />
+    <Node Display="F3" Const="F3" Value="0x72" />
+    <Node Display="F4" Const="F4" Value="0x73" />
+    <Node Display="F5" Const="F5" Value="0x74" />
+    <Node Display="F6" Const="F6" Value="0x75" />
+    <Node Display="F7" Const="F7" Value="0x76" />
+    <Node Display="F8" Const="F8" Value="0x77" />
+    <Node Display="F9" Const="F9" Value="0x78" />
+    <Node Display="F10" Const="F10" Value="0x79" />
+    <Node Display="F11" Const="F11" Value="0x7A" />
+    <Node Display="F12" Const="F12" Value="0x7B" />
+    <Node Display="F13" Const="F13" Value="0x7C" />
+    <Node Display="F14" Const="F14" Value="0x7D" />
+    <Node Display="F15" Const="F15" Value="0x7E" />
+    <Node Display="F16" Const="F16" Value="0x7F" />
+    <Node Display="F17" Const="F17" Value="0x80" />
+    <Node Display="F18" Const="F18" Value="0x81" />
+    <Node Display="F19" Const="F19" Value="0x82" />
+    <Node Display="F20" Const="F20" Value="0x83" />
+    <Node Display="F21" Const="F21" Value="0x84" />
+    <Node Display="F22" Const="F22" Value="0x85" />
+    <Node Display="F23" Const="F23" Value="0x86" />
+    <Node Display="F24" Const="F24" Value="0x87" />
+    <!--
+    * 0x88 - 0x8F : unassigned
+    -->
+    <Node Display="NUMLOCK" Const="NUMLOCK" Value="0x90" />
+    <Node Display="SCROLL" Const="SCROLL" Value="0x91" />
+    <!--
+    * NEC PC-9800 kbd definitions
+    -->
+    <Node Display="OEM_NEC_EQUAL" Const="OEM_NEC_EQUAL" Value="0x92" />   <!-- '=' key on numpad -->
+    <!--
+    * Fujitsu/OASYS kbd definitions
+    -->
+    <Node Display="OEM_FJ_JISHO" Const="OEM_FJ_JISHO" Value="0x92" />   <!-- 'Dictionary' key -->
+    <Node Display="OEM_FJ_MASSHOU" Const="OEM_FJ_MASSHOU" Value="0x93" />   <!-- 'Unregister word' key -->
+    <Node Display="OEM_FJ_TOUROKU" Const="OEM_FJ_TOUROKU" Value="0x94" />   <!-- 'Register word' key -->
+    <Node Display="OEM_FJ_LOYA" Const="OEM_FJ_LOYA" Value="0x95" />   <!-- 'Left OYAYUBI' key -->
+    <Node Display="OEM_FJ_ROYA" Const="OEM_FJ_ROYA" Value="0x96" />   <!-- 'Right OYAYUBI' key -->
+    <!--                                  
+    * 0x97 - 0x9F : unassigned
+    -->
+
+    <!--
+    * VK_L* & VK_R* - left and right Alt, Ctrl and Shift virtual keys.
+    * Used only as parameters to GetAsyncKeyState() and GetKeyState().
+    * No other API or message will distinguish left and right keys in this way.
+    -->
+    <Node Display="LSHIFT" Const="LSHIFT" Value="0xA0" />
+    <Node Display="RSHIFT" Const="RSHIFT" Value="0xA1" />
+    <Node Display="LCONTROL" Const="LCONTROL" Value="0xA2" />
+    <Node Display="RCONTROL" Const="RCONTROL" Value="0xA3" />
+    <Node Display="LMENU" Const="LMENU" Value="0xA4" />
+    <Node Display="RMENU" Const="RMENU" Value="0xA5" />
+    <Node Display="BROWSER_BACK" Const="BROWSER_BACK" Value="0xA6" />
+    <Node Display="BROWSER_FORWARD" Const="BROWSER_FORWARD" Value="0xA7" />
+    <Node Display="BROWSER_REFRESH" Const="BROWSER_REFRESH" Value="0xA8" />
+    <Node Display="BROWSER_STOP" Const="BROWSER_STOP" Value="0xA9" />
+    <Node Display="BROWSER_SEARCH" Const="BROWSER_SEARCH" Value="0xAA" />
+    <Node Display="BROWSER_FAVORITES" Const="BROWSER_FAVORITES" Value="0xAB" />
+    <Node Display="BROWSER_HOME" Const="BROWSER_HOME" Value="0xAC" />
+    <Node Display="VOLUME_MUTE" Const="VOLUME_MUTE" Value="0xAD" />
+    <Node Display="VOLUME_DOWN" Const="VOLUME_DOWN" Value="0xAE" />
+    <Node Display="VOLUME_UP" Const="VOLUME_UP" Value="0xAF" />
+    <Node Display="MEDIA_NEXT_TRACK" Const="MEDIA_NEXT_TRACK" Value="0xB0" />
+    <Node Display="MEDIA_PREV_TRACK" Const="MEDIA_PREV_TRACK" Value="0xB1" />
+    <Node Display="MEDIA_STOP" Const="MEDIA_STOP" Value="0xB2" />
+    <Node Display="MEDIA_PLAY_PAUSE" Const="MEDIA_PLAY_PAUSE" Value="0xB3" />
+    <Node Display="LAUNCH_MAIL" Const="LAUNCH_MAIL" Value="0xB4" />
+    <Node Display="LAUNCH_MEDIA_SELECT" Const="LAUNCH_MEDIA_SELECT" Value="0xB5" />
+    <Node Display="LAUNCH_APP1" Const="LAUNCH_APP1" Value="0xB6" />
+    <Node Display="LAUNCH_APP2" Const="LAUNCH_APP2" Value="0xB7" />
+    <!--
+    * 0xB8 - 0xB9 : reserved
+    -->
+    <Node Display="OEM_1" Const="OEM_1" Value="0xBA" />   <!-- '" />:' for US -->
+    <Node Display="OEM_PLUS" Const="OEM_PLUS" Value="0xBB" />   <!-- '+' any country -->
+    <Node Display="OEM_COMMA" Const="OEM_COMMA" Value="0xBC" />   <!-- ',' any country -->
+    <Node Display="OEM_MINUS" Const="OEM_MINUS" Value="0xBD" />   <!-- '-' any country -->
+    <Node Display="OEM_PERIOD" Const="OEM_PERIOD" Value="0xBE" />   <!-- '.' any country -->
+    <Node Display="OEM_2" Const="OEM_2" Value="0xBF" />   <!-- '/?' for US -->
+    <Node Display="OEM_3" Const="OEM_3" Value="0xC0" />   <!-- '`~' for US -->
+    <!--
+    * 0xC1 - 0xD7 : reserved
+    -->
+    <!--
+    * 0xD8 - 0xDA : unassigned
+    -->
+    <Node Display="OEM_4" Const="OEM_4" Value="0xDB" />  <!--  '[{' for US -->
+    <Node Display="OEM_5" Const="OEM_5" Value="0xDC" />  <!--  '\|' for US -->
+    <Node Display="OEM_6" Const="OEM_6" Value="0xDD" />  <!--  ']}' for US -->
+    <Node Display="OEM_7" Const="OEM_7" Value="0xDE" />  <!--  ''"' for US -->
+    <Node Display="OEM_8" Const="OEM_8" Value="0xDF" />
+    <!--
+    * 0xE0 : reserved
+    -->
+    <!--
+    * Various extended or enhanced keyboards
+    -->
+    <Node Display="OEM_AX" Const="OEM_AX" Value="0xE1" />  <!--  'AX' key on Japanese AX kbd -->
+    <Node Display="OEM_102" Const="OEM_102" Value="0xE2" />  <!--  "<>" or "\|" on RT 102-key kbd. -->
+    <Node Display="ICO_HELP" Const="ICO_HELP" Value="0xE3" />  <!--  Help key on ICO -->
+    <Node Display="ICO_00" Const="ICO_00" Value="0xE4" />  <!--  00 key on ICO -->
+    <Node Display="PROCESSKEY" Const="PROCESSKEY" Value="0xE5" />
+    <Node Display="ICO_CLEAR" Const="ICO_CLEAR" Value="0xE6" />
+    <Node Display="PACKET" Const="PACKET" Value="0xE7" />
+    <!--
+    * 0xE8 : unassigned
+    -->
+    <!--
+    * Nokia/Ericsson definitions
+    -->
+    <Node Display="OEM_RESET" Const="OEM_RESET" Value="0xE9" />
+    <Node Display="OEM_JUMP" Const="OEM_JUMP" Value="0xEA" />
+    <Node Display="OEM_PA1" Const="OEM_PA1" Value="0xEB" />
+    <Node Display="OEM_PA2" Const="OEM_PA2" Value="0xEC" />
+    <Node Display="OEM_PA3" Const="OEM_PA3" Value="0xED" />
+    <Node Display="OEM_WSCTRL" Const="OEM_WSCTRL" Value="0xEE" />
+    <Node Display="OEM_CUSEL" Const="OEM_CUSEL" Value="0xEF" />
+    <Node Display="OEM_ATTN" Const="OEM_ATTN" Value="0xF0" />
+    <Node Display="OEM_FINISH" Const="OEM_FINISH" Value="0xF1" />
+    <Node Display="OEM_COPY" Const="OEM_COPY" Value="0xF2" />
+    <Node Display="OEM_AUTO" Const="OEM_AUTO" Value="0xF3" />
+    <Node Display="OEM_ENLW" Const="OEM_ENLW" Value="0xF4" />
+    <Node Display="OEM_BACKTAB" Const="OEM_BACKTAB" Value="0xF5" />
+    <Node Display="ATTN" Const="ATTN" Value="0xF6" />
+    <Node Display="CRSEL" Const="CRSEL" Value="0xF7" />
+    <Node Display="EXSEL" Const="EXSEL" Value="0xF8" />
+    <Node Display="EREOF" Const="EREOF" Value="0xF9" />
+    <Node Display="PLAY" Const="PLAY" Value="0xFA" />
+    <Node Display="ZOOM" Const="ZOOM" Value="0xFB" />
+    <Node Display="NONAME" Const="NONAME" Value="0xFC" />
+    <Node Display="PA1" Const="PA1" Value="0xFD" />
+    <Node Display="OEM_CLEAR" Const="OEM_CLEAR" Value="0xFE" />
+  </Groups>
+  <Groups Display="Mouse">
+    <Node Display="" Const="" Value="" />
+  </Groups>
+</Define>

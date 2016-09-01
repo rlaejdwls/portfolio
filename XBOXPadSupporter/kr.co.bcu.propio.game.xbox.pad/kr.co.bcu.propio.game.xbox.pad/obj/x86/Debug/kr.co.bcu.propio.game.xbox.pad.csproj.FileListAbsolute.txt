@@ -1,0 +1,14 @@
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\bin\x86\Debug\kr.co.bcu.propio.game.xbox.pad.exe
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\bin\x86\Debug\kr.co.bcu.propio.game.xbox.pad.pdb
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\kr.co.bcu.propio.game.xbox.pad.csprojResolveAssemblyReference.cache
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\kr.co.bcu.propio.game.xbox.pad.exe
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\kr.co.bcu.propio.game.xbox.pad.pdb
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\bin\x86\Debug\Content\Arial.xnb
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\bin\x86\Debug\Content\Arial.xnb
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\bin\x86\Debug\kr.co.bcu.propio.game.xbox.pad.exe
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\bin\x86\Debug\kr.co.bcu.propio.game.xbox.pad.pdb
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\kr.co.bcu.propio.game.xbox.pad.csprojResolveAssemblyReference.cache
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\kr.co.bcu.propio.game.xbox.pad.exe
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.pad\obj\x86\Debug\kr.co.bcu.propio.game.xbox.pad.pdb

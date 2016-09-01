@@ -1,0 +1,10 @@
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\kr.co.bcu.propio.xbox.lib.dll
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\kr.co.bcu.propio.xbox.lib.pdb
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\Microsoft.Xna.Framework.dll
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\Microsoft.Xna.Framework.Game.dll
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\Microsoft.Xna.Framework.Graphics.dll
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\Microsoft.Xna.Framework.xml
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\Microsoft.Xna.Framework.Game.xml
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\bin\Release\Microsoft.Xna.Framework.Graphics.xml
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\obj\Release\kr.co.bcu.propio.xbox.lib.dll
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.xbox.lib\obj\Release\kr.co.bcu.propio.xbox.lib.pdb

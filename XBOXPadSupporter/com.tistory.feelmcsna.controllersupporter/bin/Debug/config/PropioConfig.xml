@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PropioConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>0.8.3b</Version>
+  <Creator>도닦는소년</Creator>
+  <OpenFileDialogPath>.\keyset\</OpenFileDialogPath>
+  <SaveFileDialogPath>.\keyset\</SaveFileDialogPath>
+  <LastOpenKeysetPath>.\keyset\KeysetTest.xml</LastOpenKeysetPath>
+</PropioConfig>

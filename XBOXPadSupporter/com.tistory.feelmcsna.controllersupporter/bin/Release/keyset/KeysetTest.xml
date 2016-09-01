@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<KeySet>
+  <PlayerList Num="1">
+    <ButtonSet LeftShoulder="F1" RightShoulder="O" LeftStick="" RightStick="" Back="E" Start="F" A="K" B="L" X="RETURN" Y="M" />
+    <DPadSet Up="T" Down="G" Left="F" Right="H" />
+    <TriggerSet Left="SHIFT" Right="SPACE">
+      <Setting LeftSensitivity="20" RightSensitivity="20" />
+    </TriggerSet>
+    <StickSet Left="Detail" Left0="A" Left1="D" Left2="W" Left3="S" Right="MouseMove" Right0="RightKeyLeft" Right1="RightKeyRight" Right2="RightKeyUp" Right3="RightKeyDown" IsLeftDetail="true" IsRightDetail="false">
+      <Setting LeftSensitivity="1" RightSensitivity="10"/>
+    </StickSet>
+  </PlayerList>
+</KeySet>

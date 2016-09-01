@@ -1,0 +1,2 @@
+H:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.padContent\obj\x86\Debug\kr.co.bcu.propio.game.xbox.padContent.contentprojResolveAssemblyReference.cache
+J:\public\IDE\xna\project\PropioProject\kr.co.bcu.propio.game.xbox.pad\kr.co.bcu.propio.game.xbox.padContent\obj\x86\Debug\kr.co.bcu.propio.game.xbox.padContent.contentprojResolveAssemblyReference.cache
