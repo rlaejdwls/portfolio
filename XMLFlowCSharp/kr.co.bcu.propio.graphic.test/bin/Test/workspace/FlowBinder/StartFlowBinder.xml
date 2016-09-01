@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<terminal start-process="process-a" desc="">
+  <process id="process-a" process-path="kr.co.bcu.propio.graphic.test.task.process.ProcessA" desc="ProcessA">
+    <flowline id="LEFT" next-process="process-c" desc="" />
+    <flowline id="RIGHT" next-process="process-b" desc="" />
+    <!--flowline id="RIGHT" next-terminal="\\workspace\\FlowBinder\\StartFlowBinder" next-process="" desc="" /-->
+  </process>
+  <process id="process-b" process-path="kr.co.bcu.propio.graphic.test.task.process.ProcessB" desc="ProcessB">
+    <flowline id="LEFT" next-process="process-a" desc="" />
+    <flowline id="RIGHT" next-process="process-c" desc="" />
+  </process>
+  <process id="process-c" process-path="kr.co.bcu.propio.graphic.test.task.process.ProcessC" desc="ProcessC">
+    <flowline id="LEFT" next-process="process-b" desc="" />
+    <flowline id="RIGHT" next-process="process-a" desc="" />
+  </process>
+</terminal>

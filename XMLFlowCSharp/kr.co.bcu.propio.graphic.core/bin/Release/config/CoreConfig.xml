@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropioConfig>
+  <FramePerSecond>90</FramePerSecond>
+  <Workspace>H:\public\IDE\C\project\C#\PropioProject\kr.co.bcu.propio.graphic.test\bin\Debug\workspace</Workspace>
+  <StartFlowBinder>FlowBinder\StartFlowBinder</StartFlowBinder>
+</PropioConfig>

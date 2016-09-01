@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80028130-6F6A-4DD3-9501-49D643BCF71D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>kr.co.bcu.propio.graphic.core</RootNamespace>
+    <AssemblyName>kr.co.bcu.propio.graphic.core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="baseflow\FlowManager.cs" />
+    <Compile Include="baseflow\model\FlowFlowlineNode.cs" />
+    <Compile Include="baseflow\model\FlowProcessNode.cs" />
+    <Compile Include="baseflow\model\FlowTerminalModel.cs" />
+    <Compile Include="baseui\UiManager.cs" />
+    <Compile Include="etc\BaseShape.cs" />
+    <Compile Include="etc\IShape.cs" />
+    <Compile Include="evento\ievent\OnActionDownEventHandler.cs" />
+    <Compile Include="evento\ievent\OnActionMoveEventHandler.cs" />
+    <Compile Include="evento\ievent\OnActionUpEventHandler.cs" />
+    <Compile Include="evento\OnEventHandler.cs" />
+    <Compile Include="evento\type\EventType.cs" />
+    <Compile Include="manage\Controller.cs" />
+    <Compile Include="manage\timer\GraphicTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="__BaseForm.cs" />
+    <Compile Include="__BaseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="__BaseMain.Designer.cs">
+      <DependentUpon>__BaseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="__BaseProcess.cs" />
+    <Compile Include="__BasePopup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\kr.co.bcu.propio.util\kr.co.bcu.propio.util.csproj">
+      <Project>{A62847C1-D324-4E0B-9A84-D7C8B91CFCBF}</Project>
+      <Name>kr.co.bcu.propio.util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\CoreConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="etc\img\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="evento\ievent\~Memo%29OnEventHandler로 통일, 추후 정식 버전에서 삭제 예정" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="baseui\control\" />
+    <Folder Include="exception\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="__BaseMain.resx">
+      <DependentUpon>__BaseMain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
