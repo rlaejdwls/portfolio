@@ -1,0 +1,153 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="kr.co.treegaems.tableviewer.MainActivity"
+	android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name" />
+
+        <EditText
+            android:id="@+id/edtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_top_bg"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:text="OracleMeta" >
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtPwd"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/password" />
+
+        <EditText
+            android:id="@+id/edtPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_default_bg"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:text="qwer1234" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtDriver"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/driver" />
+
+        <EditText
+            android:id="@+id/edtDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_default_bg"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:text="oracle.jdbc.OracleDriver" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtUrl"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/url" />
+
+        <EditText
+            android:id="@+id/edtURL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_default_bg"
+            android:ems="10"
+            android:padding="8dp"
+            android:text="jdbc:oracle:thin:@localhost:1521:xe" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtIP"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ip_address" />
+
+        <EditText
+            android:id="@+id/edtIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_bottom_bg"
+            android:ems="10"
+            android:padding="8dp"
+            android:text="192.168.0.57:7696" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/btnConnect"
+        	style="@style/btn_style_002"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+        	android:background="@drawable/black_button"
+            android:text="@string/connect" />
+
+        <Button
+            android:id="@+id/btnClose"
+        	style="@style/btn_style_002"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+        	android:background="@drawable/black_button"
+            android:text="@string/close" />
+
+    </LinearLayout>
+
+</LinearLayout>

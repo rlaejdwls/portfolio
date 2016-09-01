@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE xml>
+<StructureInfo>
+	<TableInfo Alias="Transactions" Comment="The TRANSACTIONS table contains a row for each transaction involving a patron and a book" Name="TRANSACTIONS">
+	    <ColumnInfo Alias="TransactionId" Comment="TRANSACTION ID" Len="22" Name="TRANSACTION_ID" NULL="N" No="1" PK="TRANSACTION_ID" Type="NUMBER"/>
+	    <ColumnInfo Alias="TransactionDate" Comment="TRANSACTION DATE" Len="7" Name="TRANSACTION_DATE" NULL="N" No="4" Type="DATE"/>
+	    <ColumnInfo Alias="TransactionType" Comment="TRANSACTION TYPE" Len="22" Name="TRANSACTION_TYPE" NULL="N" No="5" Type="NUMBER"/>
+	    <ColumnInfo Alias="BookId" Comment="BOOK ID" Len="20" Name="BOOK_ID" NULL="Y" No="3" Type="VARCHAR2"/>
+	    <ColumnInfo Alias="PatronId" Comment="PATRON ID" Len="22" Name="PATRON_ID" NULL="Y" No="2" Type="NUMBER"/>
+	</TableInfo>
+	<TableInfo Alias="Transactions" Comment="The TRANSACTIONS table contains a row for each transaction involving a patron and a book" Name="TRANSACTIONS">
+	    <ColumnInfo Alias="TransactionId" Comment="TRANSACTION ID" Len="22" Name="TRANSACTION_ID" NULL="N" No="1" PK="TRANSACTION_ID" Type="NUMBER"/>
+	    <ColumnInfo Alias="TransactionDate" Comment="TRANSACTION DATE" Len="7" Name="TRANSACTION_DATE" NULL="N" No="4" Type="DATE"/>
+	    <ColumnInfo Alias="TransactionType" Comment="TRANSACTION TYPE" Len="22" Name="TRANSACTION_TYPE" NULL="N" No="5" Type="NUMBER"/>
+	    <ColumnInfo Alias="BookId" Comment="BOOK ID" Len="20" Name="BOOK_ID" NULL="Y" No="3" Type="VARCHAR2"/>
+	    <ColumnInfo Alias="PatronId" Comment="PATRON ID" Len="22" Name="PATRON_ID" NULL="Y" No="2" Type="NUMBER"/>
+	</TableInfo>
+</StructureInfo>
