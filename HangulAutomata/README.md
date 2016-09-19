@@ -1,5 +1,7 @@
-HangulAutomata
+HangulAutomata(업데이트 중..)
 ============
+ * **개요**
+  *
  * **개발환경**
   * OS : Windows
   * 언어 : Lua
