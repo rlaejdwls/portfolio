@@ -1,7 +1,7 @@
 Portfolio Page
 ============
 1. 프로젝트 개요
-+ HangulAutomata
+* HangulAutomata
 + TableViewer
 + PingPong
 + SmartRemoteController
