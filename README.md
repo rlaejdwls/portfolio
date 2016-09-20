@@ -9,7 +9,7 @@ Portfolio Page
   * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/MobileTableViewer
  * **PingPong**
   * 처음 고등학교 때 프로그래밍을 접하고 계속해서 궁금했던 것이 '게임은 어떻게 구현되는 것인가?'였습니다. 그리고 게임을 처음부터 구현해보고자 만든것이 이 프로젝트 입니다.
-  * 高校生の時、初めてプログラミングを学んでずっと気になったことがゲームはどうやって実装されているのかでした。そして、ゲームを最初から作ってみたのがこのプロジェクトです。
+  * 高校生の時、初めてプログラミングを学んでずっと気になったことがゲームはどうやって具現されているのかでした。そして、ゲームを最初から作ってみたのがこのプロジェクトです。
   * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/PingPong
  * **SmartRemoteController**
   * 컴퓨터로 동영상을 감상하다가 스킵을 해야하거나 잠시 멈춰야 할 때가 있습니다. 그리고 침대에 누워 키보드를 누르러 가는 것은 참으로 힘든 일이 아닐 수 없습니다. 그래서 저는 컴퓨터용 리모콘이 필요하다고 생각했습니다.
