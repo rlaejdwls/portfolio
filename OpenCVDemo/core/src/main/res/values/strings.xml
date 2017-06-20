@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Core</string><!-- core -->
+    <string name="core_error_dialog_title">오류 레포트</string>
+    <string name="core_error_dialog_content">오류를 전송해주시면 앱의 품질을 개선하는데 큰 도움이 됩니다.\n전송하시겠습니까?</string>
+
+    <string name="submit">제출</string>
+    <string name="cancel">취소</string>
+</resources>
