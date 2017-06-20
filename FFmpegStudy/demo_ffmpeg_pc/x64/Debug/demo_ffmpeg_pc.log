@@ -1,0 +1,8 @@
+﻿  Study.cpp
+d:\ide\propio\workspace\demo_ffmpeg_pc\ffmpeg\include\libavutil\rational.h : warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+d:\ide\propio\workspace\demo_ffmpeg_pc\demo_ffmpeg_pc\study.cpp(395): warning C4101: 'decode': unreferenced local variable
+d:\ide\propio\workspace\demo_ffmpeg_pc\demo_ffmpeg_pc\study.cpp(805): warning C4101: 'gotPacket': unreferenced local variable
+d:\ide\propio\workspace\demo_ffmpeg_pc\demo_ffmpeg_pc\study.cpp(804): warning C4101: 'i': unreferenced local variable
+d:\ide\propio\workspace\demo_ffmpeg_pc\demo_ffmpeg_pc\study.cpp(179): warning C4715: 'Study::initVideoFilter': not all control paths return a value
+  demo_ffmpeg_pc.vcxproj -> D:\IDE\propio\workspace\demo_ffmpeg_pc\x64\Debug\demo_ffmpeg_pc.exe
+  demo_ffmpeg_pc.vcxproj -> D:\IDE\propio\workspace\demo_ffmpeg_pc\x64\Debug\demo_ffmpeg_pc.pdb (Full PDB)
