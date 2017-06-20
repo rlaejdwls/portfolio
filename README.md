@@ -1,20 +1,18 @@
 ﻿Portfolio(HwangUiTaek) Page
 ============
 
-* * *
-
 Android
 -------------
 
  * **OpenCVDemo**
-  * 설명 업데이트 중
-  * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/OpenCVDemo
+   * 설명 업데이트 중
+   * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/OpenCVDemo
  * **ARDemo**
-  * 설명 업데이트 중
-  * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/ARDemo
+   * 설명 업데이트 중
+   * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/ARDemo
  * **AppBaseProject**
-  * 안드로이드 프로젝트를 시작하면 항상 처음 시작 할 때 구축 해놓아야하는 기능들이 있습니다. 현재 앱의 백그라운드 혹은 포그라운드 상태, 빌드된 모드, 디버그 모드에서만 남겨야하는 로그, 전역 예외처리, 로그인의 세션 관리, 액티비티 간의 이동 등등.. 이 많은 사항을 항상 프로젝트가 시작될 때마다 구축하는 것은 참으로 비효율적입니다.
-  * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/AppBaseProject
+   * 안드로이드 프로젝트를 시작하면 항상 처음 시작 할 때 구축 해놓아야하는 기능들이 있습니다. 현재 앱의 백그라운드 혹은 포그라운드 상태, 빌드된 모드, 디버그 모드에서만 남겨야하는 로그, 전역 예외처리, 로그인의 세션 관리, 액티비티 간의 이동 등등.. 이 많은 사항을 항상 프로젝트가 시작될 때마다 구축하는 것은 참으로 비효율적입니다.
+   * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/AppBaseProject
  * **SpecViewer**
   * 모바일 개발자에게 있어서 다양한 종류의 기기에 대응하는 것은 너무나 당연한 일입니다. 하지만 그때마다 테스트 기기의 버전, 해상도, 밀도(density)를 확인하며 대응하기란 여간 귀찮은 일이 아닙니다. 그래서 한번에 기기의 사양을 확인 할 수 있도록 만들어보았습니다.
   * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/SpecViewer
