@@ -5,10 +5,10 @@ Android
 -------------
 
  * **OpenCVDemo**
-   * 설명 업데이트 중
+   * 개발자라면 인생을 살면서 OpenCV 한번 정도는 건들여봐야하지 않겠습니까? 그리고 전 깨달았습니다. 얼굴인식이 이렇게 쉬운거였다니!?
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/OpenCVDemo
  * **ARDemo**
-   * 설명 업데이트 중
+   * 저는 지도는 평면인 것이 좋습니다, 하지만 세상 사람들은 그렇지 않나봅니다.
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/ARDemo
  * **AppBaseProject**
    * 안드로이드 프로젝트를 시작하면 항상 처음 시작 할 때 구축 해놓아야하는 기능들이 있습니다. 현재 앱의 백그라운드 혹은 포그라운드 상태, 빌드된 모드, 디버그 모드에서만 남겨야하는 로그, 전역 예외처리, 로그인의 세션 관리, 액티비티 간의 이동 등등.. 이 많은 사항을 항상 프로젝트가 시작될 때마다 구축하는 것은 참으로 비효율적입니다.
