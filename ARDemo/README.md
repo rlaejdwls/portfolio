@@ -1,1 +1,1 @@
-﻿[![Alt text](https://img.youtube.com/vi/x8IJaGuUKuY&t=9s/0.jpg)](https://www.youtube.com/watch?v=x8IJaGuUKuY&t=9s)
+﻿[![ARDemo](./ARDemo.gif)](https://www.youtube.com/watch?v=x8IJaGuUKuY&t=9s)
