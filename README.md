@@ -15,6 +15,7 @@ Android
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/OpenCVDemo
  * **ARDemo**
    * 저는 지도는 평면인 것이 좋습니다, 하지만 세상 사람들은 그렇지 않나봅니다.
+   * 個人的に地図は平面(2D)なものが好きです、しかし他の人たちはそうではないみたいです。
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/ARDemo
  * **AppBaseProject**
    * 안드로이드 프로젝트를 시작하면 항상 처음 시작 할 때 구축 해놓아야하는 기능들이 있습니다. 현재 앱의 백그라운드 혹은 포그라운드 상태, 빌드된 모드, 디버그 모드에서만 남겨야하는 로그, 전역 예외처리, 로그인의 세션 관리, 액티비티 간의 이동 등등.. 이 많은 사항을 항상 프로젝트가 시작될 때마다 구축하는 것은 참으로 비효율적입니다.
@@ -44,7 +45,7 @@ C, C++, C#
 -------------
 
  * **FFmpegStudy**
-   * 설명 업데이트 중
+   * 동영상을 다루기 위해 FFmpeg 라이브러리를 학습하였습니다. 영상을 컨테이너로부터 디먹싱하고 각각의 비디오 오디오 스트림을 디코딩하게 되면 원본영상과 오디오를 얻을 수 있습니다. 그리고 그것을 필터(재가공)한 후 FFmpeg을 통하여 다시 인코딩하고 먹싱하는 과정을 거치면 동영상을 편집하거나 가공할 수 있습니다.
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/FFmpegStudy
  * **XBOXPadSupporter**
    * 게임 패드에 익숙해진 사람에게 패드를 지원하지 않는 게임은 너무나 가혹합니다. 그래서 저는 패드를 이용하여 패드를 지원하지 않는 게임을 하기 위해 이것을 만들었습니다.
