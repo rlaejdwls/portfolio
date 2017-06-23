@@ -38,6 +38,7 @@ Android
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/SmartRemoteController
  * **VocalRemover**
    * 소리의 파장을 180도 반전시켜 정확하게 일치시키면 그 소리는 무음이 됩니다. 그리고 이것을 지원해주는 C언어로된 라이브러리가 있습니다. 그것을 JNI를 이용하여 안드로이드에 적용시켜 보았습니다.
+   * 音のサイクルを180度反転させて、正確に一致させると、その音は無音になります。そしてこれを支援してくれるC言語ライブラリがあります。 それをJNIを利用してアンドロイドに適用させてみました。
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/VocalRemover
 
 * * *
