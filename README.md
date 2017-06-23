@@ -22,6 +22,7 @@ Android
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/AppBaseProject
  * **SpecViewer**
    * 모바일 개발자에게 있어서 다양한 종류의 기기에 대응하는 것은 너무나 당연한 일입니다. 하지만 그때마다 테스트 기기의 버전, 해상도, 밀도(density)를 확인하며 대응하기란 여간 귀찮은 일이 아닙니다. 그래서 한번에 기기의 사양을 확인 할 수 있도록 만들어보았습니다.
+   * モバイルエンジニアにとっていろんな種類のデバイスに対応することは当然のことです。しかし、そのたびにテストデバイスのバージョン、解像度(resolution)、密度(density)を確認して対応することは本当に面倒くさいことです。 それでデバイスのスペックをひと目で確認できるように作ってみました。
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/SpecViewer
  * **TableViewer**
    * 휴가 중에 어쩔 수 없이 데이터베이스를 확인해야 할 때가 있습니다. 그럴때 제 앞에 반드시 컴퓨터가 있으리란 보장은 없습니다. 하지만 반드시 핸드폰은 제 손에 있을겁니다. 이 프로젝트는 핸드폰으로 DB접속 툴을 만들어보고자 시작했습니다. 하지만 지금은 실용성이 없다고 판단되어 보류된 상태입니다.
