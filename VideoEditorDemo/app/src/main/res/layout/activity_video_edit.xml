@@ -15,12 +15,17 @@
         android:layout_height="56dp"
         android:background="#FF2B2B2B"
         android:id="@+id/relativeLayout">
-        <ImageView
-            android:layout_margin="10dp"
-            android:layout_width="36dp"
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="56dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_back"
-            android:id="@+id/imgBack"/>
+            android:id="@+id/imgBack"
+            android:background="?android:attr/selectableItemBackground">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_back"/>
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,13 +35,19 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Edit"/>
-        <ImageView
-            android:layout_margin="15dp"
-            android:layout_alignParentRight="true"
-            android:layout_width="26dp"
+        <LinearLayout
+            android:padding="15dp"
+            android:layout_width="56dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_confirm"
-            android:id="@+id/imgConfirm"/>
+            android:layout_alignParentRight="true"
+            android:id="@+id/imgConfirm"
+            android:background="?android:attr/selectableItemBackground">
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_width="26dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_confirm"/>
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
