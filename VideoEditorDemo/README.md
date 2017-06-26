@@ -6,4 +6,4 @@
    * 動画でご覧になりたい方は[ここ](https://www.youtube.com/watch?v=bapIeu4Vu3A)をクリックしてください。
 
  * **기타 その他**
-   * Code Shortcut : https://github.com/rlaejdwls/portfolio/tree/master/VideoEditor/app/src/main/java/com/example/demo
+   * Code Shortcut : https://github.com/rlaejdwls/portfolio/tree/master/VideoEditorDemo/app/src/main/java/com/example/demo
