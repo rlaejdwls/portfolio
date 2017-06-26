@@ -1,0 +1,187 @@
+
+    /*
+                boolean timeCorrected = false;
+
+                // Here we try to find a track that has sync samples. Since we can only start decoding
+                // at such a sample we SHOULD make sure that the start of the new fragment is exactly
+                // such a frame
+                for (Track track : tracks) {
+                    if (track.getSyncSamples() != null && track.getSyncSamples().length > 0) {
+                        if (timeCorrected) {
+                            // This exception here could be a false positive in case we have multiple tracks
+                            // with sync samples at exactly the same positions. E.g. a single movie containing
+                            // multiple qualities of the same video (Microsoft Smooth Streaming file)
+
+                            throw new RuntimeException("The startTime has already been corrected by another track with SyncSample. Not Supported.");
+                        }
+                        startTime1 = correctTimeToSyncSample(track, startTime1, false);
+                        endTime1 = correctTimeToSyncSample(track, endTime1, true);
+    //                    startTime2 = correctTimeToSyncSample(track, startTime2, false);
+    //                    endTime2 = correctTimeToSyncSample(track, endTime2, true);
+                        timeCorrected = true;
+                    }
+                }
+    */
+    private static double correctTimeToSyncSample(Track track, double cutHere, boolean next) {
+        double[] timeOfSyncSamples = new double[track.getSyncSamples().length];
+        long currentSample = 0;
+        double currentTime = 0;
+        for (int i = 0; i < track.getSampleDurations().length; i++) {
+            long delta = track.getSampleDurations()[i];
+
+            if (Arrays.binarySearch(track.getSyncSamples(), currentSample + 1) >= 0) {
+                // samples always start with 1 but we start with zero therefore +1
+                timeOfSyncSamples[Arrays.binarySearch(track.getSyncSamples(), currentSample + 1)] = currentTime;
+            }
+            currentTime += (double) delta / (double) track.getTrackMetaData().getTimescale();
+            currentSample++;
+        }
+        double previous = 0;
+        for (double timeOfSyncSample : timeOfSyncSamples) {
+            if (timeOfSyncSample > cutHere) {
+                if (next) {
+                    return timeOfSyncSample;
+                } else {
+                    return previous;
+                }
+            }
+            previous = timeOfSyncSample;
+        }
+        return timeOfSyncSamples[timeOfSyncSamples.length - 1];
+    }
+
+
+
+    public void cut(String path) {
+        try {
+            long start1 = System.currentTimeMillis();
+            Movie movie = MovieCreator.build(path);
+
+            List<Track> tracks = movie.getTracks();
+            movie.setTracks(new LinkedList<Track>());
+
+            double startAudioTime = startVideoTime;
+            double endAudioTime = endVideoTime;
+
+            for (Track track : tracks) {
+                long currentSample = 0;
+                long currentSyncSample;
+                double currentTime = 0;
+                double lastTime = -1;
+                long startSample = -1;
+                long endSample = -1;
+                int syncCount = 0;
+
+                for (int i = 0; i < track.getSampleDurations().length; i++) {
+                    long delta = track.getSampleDurations()[i];
+
+                    if (track.getSyncSamples() != null) {
+                        currentSyncSample = track.getSyncSamples()[syncCount];
+
+                        if (currentTime > lastTime && currentTime <= startVideoTime) {
+                            if (currentSyncSample <= currentSample) {
+                                startSample = track.getSyncSamples()[syncCount];
+                                syncCount++;
+                                startAudioTime = currentTime;
+                            }
+                        } else if (currentTime > lastTime && currentTime <= endVideoTime) {
+                            if (currentSyncSample <= currentSample) {
+                                if (syncCount < (track.getSyncSamples().length - 1)) {
+                                    syncCount++;
+                                }
+                                endSample = track.getSyncSamples()[syncCount];
+                            }
+                        }
+                        if (currentSample <= endSample) {
+                            endAudioTime = currentTime;
+                        } else {
+                            break;
+                        }
+                    } else {
+                        if (currentTime > lastTime && currentTime <= startAudioTime) {
+                            startSample = currentSample;
+                        }
+                        if (currentTime > lastTime && currentTime <= endAudioTime) {
+                            endSample = currentSample;
+                        } else {
+                            break;
+                        }
+                    }
+                    lastTime = currentTime;
+                    currentTime += (double) delta / (double) track.getTrackMetaData().getTimescale();
+                    currentSample++;
+                }
+
+                Log.d(MainActivity.this.getClass().getName(), "s1:" + startSample + ",e1:" + endSample);
+
+                movie.addTrack(new AppendTrack(new ClippedTrack(track, startSample - 1, endSample - 1)/*, new ClippedTrack(track, startSample2, endSample2)*/));
+            }
+
+            Container out = new DefaultMp4Builder().build(movie);
+            long start2 = System.currentTimeMillis();
+            output = root + "/video/output.mp4";//String.format("output-%f-%f--%f-%f.mp4", startTime1, endTime1, startTime2, endTime2);
+
+            Log.d(MainActivity.this.getClass().getName(), new File(output).createNewFile() + "");
+
+            FileOutputStream fos = new FileOutputStream(output);
+            FileChannel fc = fos.getChannel();
+            out.writeContainer(fc);
+
+            fc.close();
+            fos.close();
+            long start3 = System.currentTimeMillis();
+            Log.d(MainActivity.this.getClass().getName(), "Building IsoFile took : " + (start2 - start1) + "ms");
+            Log.d(MainActivity.this.getClass().getName(), "Writing IsoFile took  : " + (start3 - start2) + "ms");
+            Log.d(MainActivity.this.getClass().getName(), "Writing IsoFile speed : " + (new File(output).length() / (start3 - start2) / 1000) + "MB/s");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private NotificationManager mNotifyManager;
+    private NotificationCompat.Builder mBuilder;
+    int id = 1;
+
+    private class Downloader extends AsyncTask<Void, Integer, Integer> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            // Displays the progress bar for the first time.
+            mBuilder.setProgress(100, 0, false);
+            mNotifyManager.notify(id, mBuilder.build());
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            // Update progress
+            mBuilder.setProgress(100, values[0], false);
+            mNotifyManager.notify(id, mBuilder.build());
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected Integer doInBackground(Void... params) {
+            int i;
+            for (i = 0; i <= 100; i += 5) {
+                // Sets the progress indicator completion percentage
+                publishProgress(Math.min(i, 100));
+                try {
+                    // Sleep for 5 seconds
+                    Thread.sleep(2 * 1000);
+                } catch (InterruptedException e) {
+                    Log.d("TAG", "sleep failure");
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Integer result) {
+            super.onPostExecute(result);
+            mBuilder.setContentText("Download complete");
+            // Removes the progress bar
+            mBuilder.setProgress(0, 0, false);
+            mNotifyManager.notify(id, mBuilder.build());
+        }
+    }

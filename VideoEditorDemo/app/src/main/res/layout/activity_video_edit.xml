@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF171717" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FF2B2B2B"
+        android:id="@+id/relativeLayout">
+        <ImageView
+            android:layout_margin="10dp"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back"
+            android:id="@+id/imgBack"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="Edit"/>
+        <ImageView
+            android:layout_margin="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="26dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_confirm"
+            android:id="@+id/imgConfirm"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true">
+        <com.example.demo.layout.Wide16_9Layout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:id="@+id/imgThumbnail"/>
+        </com.example.demo.layout.Wide16_9Layout>
+    </RelativeLayout>
+    <!--
+    상단 49dp
+    중단 48dp
+    하단 36dp
+    -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="133dp"
+        android:background="#FF2B2B2B"
+        android:layout_alignParentBottom="true"/>
+    <LinearLayout
+        android:layout_marginBottom="84dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2993ED"
+            android:text="00:00:00"
+            android:id="@+id/lblStartTime"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2993ED"
+            android:text=" - "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2993ED"
+            android:text="00:00:00"
+            android:id="@+id/lblStopTime"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginBottom="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FF1C1C1C"
+        android:layout_alignParentBottom="true">
+        <com.example.demo.widget.timestamp.Timestamp
+            android:layout_marginLeft="19.5dp"
+            android:layout_marginRight="19.5dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/timestamp"/>
+    </RelativeLayout>
+</RelativeLayout>
