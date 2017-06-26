@@ -40,6 +40,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:layout_marginBottom="133dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/relativeLayout"
