@@ -6,6 +6,19 @@
    * アップデート予定
 
 * * *
+<!--
+Launching App
+-------------
+
+ * **디오아시스 TheOASIS**
+   * Google Store URL : https://play.google.com/store/apps/details?id=com.needidsoft.oasis&hl=ko
+ * **APS**
+   * Google Store URL : https://play.google.com/store/apps/details?id=com.needidsoft.aps&hl=ko
+ * **맞댐 MatDaem マッデム**
+   * Google Store URL : https://play.google.com/store/apps/details?id=com.needidsoft.matdaem&hl=ko
+
+* * *
+-->
 
 Android
 -------------
@@ -16,6 +29,7 @@ Android
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/VideoEditorDemo
  * **OpenCVDemo**
    * 개발자라면 인생을 살면서 OpenCV 한번 정도는 건들여봐야하지 않겠습니까? 그리고 전 깨달았습니다. 얼굴인식이 이렇게 쉬운거였다니!?
+   * プログラマーなら、人生においてOpenCV一度ぐらいは弄ってみべきではないでしょうか? そして私は気付きました。 顔認識がこんなに簡単だったとは!?
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/OpenCVDemo
  * **ARDemo**
    * 개인적으로는 지도가 평면인 것이 좋습니다, 하지만 세상 사람들은 그렇지 않나봅니다.
