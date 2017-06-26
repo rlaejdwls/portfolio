@@ -10,6 +10,10 @@
 Android
 -------------
 
+ * **VideoEditorDemo**
+   * 업데이트 예정
+   * アップデート予定
+   * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/VideoEditorDemo
  * **OpenCVDemo**
    * 개발자라면 인생을 살면서 OpenCV 한번 정도는 건들여봐야하지 않겠습니까? 그리고 전 깨달았습니다. 얼굴인식이 이렇게 쉬운거였다니!?
    * Shortcuts : https://github.com/rlaejdwls/portfolio/tree/master/OpenCVDemo
