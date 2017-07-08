@@ -21,12 +21,24 @@
     <ClCompile Include="Test.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Multiplexer.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Demultiplexer.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
     <ClCompile Include="Study.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiplexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Demultiplexer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Study.h">
