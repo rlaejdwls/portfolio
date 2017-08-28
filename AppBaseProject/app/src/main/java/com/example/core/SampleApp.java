@@ -5,7 +5,7 @@ import com.example.core.manage.Logger;
 /**
  * Created by Hwang on 2017-01-04.
  */
-public class SampleApplication extends AppCore {
+public class SampleApp extends AppCore {
     @Override
     protected void notifyBackground() {
         super.notifyBackground();

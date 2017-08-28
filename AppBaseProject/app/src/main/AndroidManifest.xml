@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name="com.example.core.SampleApplication">
+        android:name="com.example.core.SampleApp">
+        <meta-data android:name="core.ENCRYPTION_KEY" android:value="com.example.coresample.encryption.key" />
 
         <activity android:name=".activities.SplashActivity">
             <intent-filter>

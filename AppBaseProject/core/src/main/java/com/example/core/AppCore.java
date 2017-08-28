@@ -13,6 +13,7 @@ import com.example.core.manage.Config;
 import com.example.core.manage.Debugger;
 import com.example.core.manage.ExceptionHandler;
 import com.example.core.manage.Logger;
+import com.example.core.manage.ORDBM;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -38,6 +39,7 @@ public class AppCore extends Application {
 
     private HashMap<Object, Object> commonData;
     private Config config;
+    private ORDBM ordbm;
 
     public AppCore() {
         super();
@@ -79,11 +81,10 @@ public class AppCore extends Application {
         }
         return appCore.getConfig();
     }
-    /*
-    * 공통 저장소와 시스템 Config에 모든 데이터를 저장하는 함수
-    * @param result 저장 값 Map
-    * @param isAutoLogin 자동 로그인 값
-    */
+    /**
+     * 공통 저장소와 시스템 Config에 모든 데이터를 저장하는 함수
+     * @param result 저장 값 Map
+     */
     public static Config saveAll(Map result) {
         Iterator<String> iterator = result.keySet().iterator();
         while (iterator.hasNext()) {
@@ -99,7 +100,6 @@ public class AppCore extends Application {
      * @param key 삭제하는 데이터의 키
      */
     public static void remove(Object key) { appCore.getCommonData().remove(key); }
-
     /**
      * 공통 저장소에서 모든 데이터를 삭제하는 함수
      */
@@ -129,6 +129,12 @@ public class AppCore extends Application {
      */
     public HashMap<Object, Object> getCommonData() {
         return commonData;
+    }
+    public static ORDBM db() {
+        if (appCore.ordbm == null) {
+            appCore.ordbm = ORDBM.DEFAULT_FACTORY.build(appCore.getApplicationContext());
+        }
+        return appCore.ordbm;
     }
 
     @Override
@@ -213,7 +219,6 @@ public class AppCore extends Application {
         commonData.put("DIR_DATA", appCore.getApplicationContext().getFilesDir() + "/data");
         commonData.put("DIR_IMAGE", appCore.getApplicationContext().getFilesDir() + "/image");
     }
-
     protected void notifyBackground() {
     }
 }
