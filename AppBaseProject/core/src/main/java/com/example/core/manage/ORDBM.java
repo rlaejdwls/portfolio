@@ -3,10 +3,14 @@ package com.example.core.manage;
 import android.content.Context;
 
 import java.util.Collection;
+import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmAsyncTask;
 import io.realm.RealmConfiguration;
 import io.realm.RealmModel;
+import io.realm.RealmObject;
+import io.realm.RealmQuery;
 
 /**
  * Created by Hwang on 2017-08-28.
@@ -16,7 +20,7 @@ public class ORDBM {
 
     private Context context;
     private Realm realm;
-//    private SQLManager sql;
+    private RealmAsyncTask task;
 
     private ORDBM(Context context) {
         this.context = context;
@@ -39,85 +43,120 @@ public class ORDBM {
             return new ORDBM(context);
         }
     };
+    public abstract static class DefaultTransaction<E extends RealmModel> implements Realm.Transaction {
+        protected Object object;
+
+        public DefaultTransaction(E object) {
+            this.object = object;
+        }
+        public DefaultTransaction(List<E> object) {
+            this.object = object;
+        }
+    }
     public abstract static class DefaultCallback
             implements Realm.Transaction.OnSuccess, Realm.Transaction.OnError {
         @Override
+        public void onSuccess() {
+            success();
+        }
+        @Override
         public void onError(Throwable error) {
             Logger.printStackTrace(error);
+            error();
         }
-    }/*
-    public class SQLManager<E extends RealmObject> {
+        public abstract void success();
+        public void error() {}
+    }
+    public ORDBM listener(Realm.Transaction transaction, DefaultCallback callback) {
+        task = realm.executeTransactionAsync(transaction, callback, callback);
+        return this;
+    }
+    public <E extends RealmModel> RealmQuery<E> where(Class<E> clazz) {
+        return realm.where(clazz);
+    }
+    public void cancel() {
+        if (task != null && !task.isCancelled()) {
+            task.cancel();
+        }
+    }
+
+    private enum Type {
+        INSERT,
+        INSERT_OR_UPDATE,
+        DELETE_ALL
+    }
+
+    public <T extends RealmModel> SQLManager insert(T model) {
+        return new SQLManager<>(model, Type.INSERT);
+    }
+    public <T extends RealmObject> SQLManager insert(List<T> model) {
+        return new SQLManager<>(model, Type.INSERT);
+    }
+    public <T extends RealmModel> SQLManager insertOrUpdate(T model) {
+        return new SQLManager<>(model, Type.INSERT_OR_UPDATE);
+    }
+    public <T extends RealmObject> SQLManager insertOrUpdate(List<T> model) {
+        return new SQLManager<>(model, Type.INSERT_OR_UPDATE);
+    }
+    public SQLManager deleteAll() {
+        return new SQLManager<>(Type.DELETE_ALL);
+    }
+
+    public class SQLManager<E extends RealmModel> {
+        private Object model;
+        private Type type;
+
+        private SQLManager(Type type) {
+            this.type = type;
+        }
+        private SQLManager(E object, Type type) {
+            this.model = object;
+            this.type = type;
+        }
+        private SQLManager(List<E> objects, Type type) {
+            this.model = objects;
+            this.type = type;
+        }
+
         public class DefaultTransaction implements Realm.Transaction {
-            private Realm realm;
-            private E model;
-
-            public DefaultTransaction(E model) {
-                this.model = model;
-            }
-
             @Override
             public void execute(Realm realm) {
-                this.realm = realm;
+                try {
+                    switch (type) {
+                        case INSERT:
+                            if (model instanceof List) { realm.insert((Collection<? extends RealmModel>) model); } else { realm.insert((RealmModel) model); }
+                            break;
+                        case INSERT_OR_UPDATE:
+                            if (model instanceof List) { realm.insertOrUpdate((Collection<? extends RealmModel>) model); } else { realm.insertOrUpdate((RealmModel) model); }
+                            break;
+                        case DELETE_ALL:
+                            realm.deleteAll();
+                            break;
+                    }
+//                    if (model instanceof List) {
+//                        Method method = realm.getClass().getMethod(methodName, Collection.class);
+//                        method.invoke(realm, model);
+//                    } else if (model instanceof RealmModel) {
+//                        Method method = realm.getClass().getMethod(methodName, RealmModel.class);
+//                        method.invoke(realm, model);
+//                    }
+                } catch (Exception e) {
+                    Logger.printStackTrace(e);
+                    throw new RuntimeException(e);
+                }
             }
-
-            public void insert() {
-                realm.insert(model);
-            }
-            public void update() {
-                realm.insertOrUpdate(model);
-            }
-//            public void delete() {
-//                realm.delete(model);
-//            }
         }
 
         private DefaultTransaction transaction;
+        private DefaultCallback callback;
 
-        private SQLManager(E model) {
-            transaction = new DefaultTransaction(model);
+        public SQLManager listener(DefaultCallback callback) {
+            this.transaction = new DefaultTransaction();
+            this.callback = callback;
+            return this;
         }
-
-        public DefaultTransaction listener(DefaultCallback callback) {
+        public void execute() {
             realm.executeTransactionAsync(transaction, callback, callback);
-            return transaction;
         }
-    }*/
-    public class DefaultTransaction implements Realm.Transaction {
-        private Realm realm;
-
-        @Override
-        public void execute(Realm realm) {
-            this.realm = realm;
-        }
-        public void insert(RealmModel object) {
-            realm.insert(object);
-        }
-        public void insert(Collection<? extends RealmModel> objects) {
-            realm.insert(objects);
-        }
-//        public void update() {
-//            realm.insertOrUpdate(model);
-//        }
-//            public void delete() {
-//                realm.delete(model);
-//            }
     }
-    public DefaultTransaction listener(DefaultCallback callback) {
-        DefaultTransaction transaction = new DefaultTransaction();
-        realm.executeTransactionAsync(transaction, callback, callback);
-        return transaction;
-    }
-
-    public Realm getRealm() {
-        return realm;
-    }
-//    public <T extends RealmObject> SQLManager insert(T model) {
-//        return new SQLManager<>(model);
-//    }
-//    public <T extends RealmObject> SQLManager update(T model) {
-//        return new SQLManager<>(model);
-//    }
-//    public <T extends RealmObject> SQLManager delete(T model) {
-//        return new SQLManager<>(model);
-//    }
 }
