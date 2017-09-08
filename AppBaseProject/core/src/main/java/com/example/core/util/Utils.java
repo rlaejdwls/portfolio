@@ -1,8 +1,10 @@
 package com.example.core.util;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
+import com.example.core.R;
 import com.example.core.manage.Logger;
 
 import org.json.JSONException;
@@ -47,18 +49,19 @@ public class Utils {
             int message,
             DialogInterface.OnClickListener positiveListener,
             boolean isShowCancel) {
-//        AlertDialog.Builder dialog = new AlertDialog.Builder(context, R.style.lime_orange_dialog);
-//        if (title != DISABLE) dialog.setTitle(title);
-//        if (message != DISABLE) dialog.setMessage(message);
-//        dialog.setPositiveButton(R.string.ok, positiveListener);
-//        if (isShowCancel) {
-//            dialog.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                }
-//            });
-//        }
-//        dialog.create().show();
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context, R.style.dialog_lime_orange);
+        if (title != DISABLE) dialog.setTitle(title);
+        if (message != DISABLE) dialog.setMessage(message);
+        dialog.setPositiveButton(R.string.ok, positiveListener);
+        dialog.setCancelable(false);
+        if (isShowCancel) {
+            dialog.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+        }
+        dialog.create().show();
     }
 
     /*

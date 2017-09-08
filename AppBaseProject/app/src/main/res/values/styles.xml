@@ -21,4 +21,12 @@
         <!-- 바탕 -->
         <!--<item name="android:windowBackground">@drawable/background_dialog</item>-->
     </style>
+
+    <style name="dialog_select" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowTitleStyle">@style/dialog_select_title</item>
+    </style>
+    <style name="dialog_select_title" parent="android:Widget.TextView">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/main</item>
+    </style>
 </resources>

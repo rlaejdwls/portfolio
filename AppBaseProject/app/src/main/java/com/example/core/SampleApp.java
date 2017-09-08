@@ -15,5 +15,10 @@ public class SampleApp extends AppCore {
     protected void notifyForeground() {
         super.notifyForeground();
         Logger.d("");
+
+        this.put("DIR_LOG", SampleApp.getApplication().getApplicationContext().getFilesDir() + "/log/log");
+        this.put("DIR_ERROR", SampleApp.getApplication().getFilesDir() + "/log/error");
+        this.put("DIR_DATA", SampleApp.getApplication().getFilesDir() + "/data");
+        this.put("DIR_IMAGE", SampleApp.getApplication().getFilesDir() + "/image");
     }
 }
