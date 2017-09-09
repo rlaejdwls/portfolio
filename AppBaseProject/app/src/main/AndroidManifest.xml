@@ -3,6 +3,8 @@
     package="com.example.coresample">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,18 @@
         android:name="com.example.core.SampleApp">
         <meta-data android:name="core.ENCRYPTION_KEY" android:value="com.example.coresample.encryption.key" />
 
+        <!-- File Provider -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.coresample.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_files_path" />
+        </provider>
+
+        <!-- Activities -->
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +36,11 @@
         </activity>
         <activity android:name=".activities.RealmActivity" />
         <activity android:name=".activities.RxJavaActivity" />
-    </application>
+        <activity android:name=".activities.ImageActivity" />
 
+        <!-- Dialog -->
+        <activity android:name=".dialog.SelectDialog"
+            android:theme="@style/dialog_select"
+            android:label="@string/title_select_dialog" />
+    </application>
 </manifest>

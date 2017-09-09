@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btn_img_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Image Select" />
+    <TextView
+        android:id="@+id/txt_image_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_view" />
+</LinearLayout>

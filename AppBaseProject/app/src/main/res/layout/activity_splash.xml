@@ -66,6 +66,14 @@
             android:layout_below="@+id/btn_glide_test"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+        <Button
+            android:id="@+id/btn_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image"
+            android:layout_below="@+id/btn_glide_test"
+            android:layout_toRightOf="@+id/btn_test"
+            android:layout_toEndOf="@+id/btn_test" />
     </RelativeLayout>
 
     <RelativeLayout

@@ -32,6 +32,8 @@ import com.example.coresample.dialog.GlobalDialog;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import retrofit2.http.HEAD;
+
 @GlideExtension
 public class SplashActivity extends AppCompatActivity/* implements View.OnClickListener*/ {
     @Bind private TextView txtView01;
@@ -78,15 +80,18 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                                         .build(StringUtils.toAlias(RealmActivity.class.getName()))
                                         .show();
                                 break;
-                            case R.id. btn_realm:
+                            case R.id.btn_realm:
                                 startActivity(new Intent(SplashActivity.this, RealmActivity.class));
                                 break;
                             case R.id.btn_test:
                                 Message message = new Handler().obtainMessage();
                                 message.obj = "asdbddsfsd";
                                 break;
+                            case R.id.btn_image:
+                                startActivity(new Intent(SplashActivity.this, ImageActivity.class));
+                                break;
                         }
                     }
-                }, R.id.btn_glide_test, R.id.btn_dialog_test, R.id.btn_realm, R.id.btn_test);
+                }, R.id.btn_glide_test, R.id.btn_dialog_test, R.id.btn_realm, R.id.btn_test, R.id.btn_image);
     }
 }

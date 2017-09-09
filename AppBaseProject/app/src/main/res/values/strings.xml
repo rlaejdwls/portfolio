@@ -2,4 +2,12 @@
     <string name="app_name">CoreSample</string>
 
     <string name="retry">재시도</string>
+    <string name="camera">카메라</string>
+    <string name="gallery">갤러리</string>
+    <string name="default_image">기본 이미지</string>
+
+    <string name="title_select_dialog">이미지 선택</string>
+
+    <string name="toast_not_have_permission_can_not_proceed">권한이 없으면 더 이상 진행할 수 없습니다.</string>
+    <string name="toast_failed_import_media_data">미디어 데이터를 가져오는데 실패했습니다.</string>
 </resources>

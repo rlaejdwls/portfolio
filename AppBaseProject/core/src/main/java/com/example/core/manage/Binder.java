@@ -4,14 +4,13 @@ import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.example.core.event.OnSingleClickListener;
 import com.example.core.manage.annotation.Bind;
 import com.example.core.util.StringUtils;
 
 import java.lang.reflect.Field;
 
 /**
- * Created by tigris on 2017-07-28.
+ * Created by Hwang on 2017-07-28.
  */
 public class Binder {
     private static Binder binder;
@@ -73,7 +72,10 @@ public class Binder {
             return onClick(views);
         }
         public BindManager onClick(View... views) {
-            return onClick(container, views);
+            if (container instanceof View.OnClickListener) {
+                return onClick((View.OnClickListener) container, views);
+            }
+            return this;
         }
         public BindManager onClick(View.OnClickListener container, int... ids) {
             View[] views =  new View[ids.length];
@@ -82,12 +84,9 @@ public class Binder {
             }
             return onClick(container, views);
         }
-        public BindManager onClick(Object container, View... views) {
-            if (container instanceof View.OnClickListener ||
-                    container instanceof OnSingleClickListener) {
-                for (View view : views) {
-                    view.setOnClickListener((View.OnClickListener) container);
-                }
+        public BindManager onClick(View.OnClickListener container, View... views) {
+            for (View view : views) {
+                view.setOnClickListener(container);
             }
             return this;
         }
