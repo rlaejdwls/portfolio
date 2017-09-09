@@ -3,6 +3,8 @@ package com.example.coresample.activities;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -79,8 +81,12 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                             case R.id. btn_realm:
                                 startActivity(new Intent(SplashActivity.this, RealmActivity.class));
                                 break;
+                            case R.id.btn_test:
+                                Message message = new Handler().obtainMessage();
+                                message.obj = "asdbddsfsd";
+                                break;
                         }
                     }
-                }, R.id.btn_glide_test, R.id.btn_dialog_test, R.id.btn_realm);
+                }, R.id.btn_glide_test, R.id.btn_dialog_test, R.id.btn_realm, R.id.btn_test);
     }
 }
