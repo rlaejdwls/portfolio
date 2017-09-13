@@ -3,8 +3,6 @@ package com.example.coresample.activities;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,15 +22,20 @@ import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.signature.ObjectKey;
 import com.example.core.event.OnSingleClickListener;
 import com.example.core.manage.Binder;
+import com.example.core.manage.Logger;
 import com.example.core.manage.annotation.Bind;
 import com.example.core.util.StringUtils;
 import com.example.coresample.R;
+import com.example.coresample.activities.model.OptionModel;
+import com.example.coresample.activities.model.SelectItemModel;
 import com.example.coresample.dialog.GlobalDialog;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-
-import retrofit2.http.HEAD;
+import java.util.List;
 
 @GlideExtension
 public class SplashActivity extends AppCompatActivity/* implements View.OnClickListener*/ {
@@ -84,8 +87,16 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                                 startActivity(new Intent(SplashActivity.this, RealmActivity.class));
                                 break;
                             case R.id.btn_test:
-                                Message message = new Handler().obtainMessage();
-                                message.obj = "asdbddsfsd";
+                                List<SelectItemModel> items = new ArrayList<>();
+                                items.add(new SelectItemModel("1", "Normal", 480, true));
+                                items.add(new SelectItemModel("2", "High", 720, false));
+                                items.add(new SelectItemModel("3", "Very High", 1080, false));
+
+                                List<OptionModel> options = new ArrayList<>();
+                                options.add(new OptionModel(items, new String[] { "1" }, "radio", "Set image quality"));
+
+                                String json = new Gson().toJson(options, new TypeToken<List<OptionModel>>() {}.getType());
+                                Logger.d(json);
                                 break;
                             case R.id.btn_image:
                                 startActivity(new Intent(SplashActivity.this, ImageActivity.class));
