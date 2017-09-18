@@ -74,6 +74,14 @@
             android:layout_below="@+id/btn_glide_test"
             android:layout_toRightOf="@+id/btn_test"
             android:layout_toEndOf="@+id/btn_test" />
+        <Button
+            android:id="@+id/btn_library"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library"
+            android:layout_below="@+id/btn_glide_test"
+            android:layout_toRightOf="@+id/btn_image"
+            android:layout_toEndOf="@+id/btn_image" />
     </RelativeLayout>
 
     <RelativeLayout

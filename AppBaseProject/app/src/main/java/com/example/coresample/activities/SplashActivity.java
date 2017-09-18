@@ -101,8 +101,13 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                             case R.id.btn_image:
                                 startActivity(new Intent(SplashActivity.this, ImageActivity.class));
                                 break;
+                            case R.id.btn_library:
+                                startActivity(new Intent(SplashActivity.this, LibraryActivity.class));
+                                break;
                         }
                     }
-                }, R.id.btn_glide_test, R.id.btn_dialog_test, R.id.btn_realm, R.id.btn_test, R.id.btn_image);
+                }, R.id.btn_glide_test, R.id.btn_dialog_test,
+                        R.id.btn_realm, R.id.btn_test,
+                        R.id.btn_image, R.id.btn_library);
     }
 }

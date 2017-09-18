@@ -14,18 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.example.core.SampleApp">
-        <meta-data android:name="core.ENCRYPTION_KEY" android:value="com.example.coresample.encryption.key" />
-
-        <!-- File Provider -->
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.coresample.fileprovider"
-            android:grantUriPermissions="true"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_files_path" />
-        </provider>
+        <meta-data android:name="core.ENCRYPTION_KEY" android:value="${applicationId}.encryption.key" />
 
         <!-- Activities -->
         <activity android:name=".activities.SplashActivity">
@@ -38,10 +27,32 @@
         <activity android:name=".activities.RealmActivity" />
         <activity android:name=".activities.RxJavaActivity" />
         <activity android:name=".activities.ImageActivity" />
+        <activity android:name=".activities.LibraryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.${applicationId}.web/vnd.${applicationId}.web" />
+            </intent-filter>
+        </activity>
 
         <!-- Dialog -->
         <activity android:name=".dialog.SelectDialog"
             android:theme="@style/dialog_select"
             android:label="@string/title_select_dialog" />
+
+        <!-- Provider -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_files_path" />
+        </provider>
+        <provider
+            android:name=".provider.WebBrowserProvider"
+            android:authorities="${applicationId}.webbrowser"
+            android:exported="false" />
     </application>
 </manifest>
