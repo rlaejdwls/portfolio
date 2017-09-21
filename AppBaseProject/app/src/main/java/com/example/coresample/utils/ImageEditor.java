@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.InvalidObjectException;
 
 /**
- * Created by needid on 2016-11-14.
+ * Created by Hwang on 2016-11-14.
  * 작성자 : 황의택
  * 내용 : Uri를 통하여 이미지의 사이즈를 조정하거나 압축하는 등의 작업을 수행하는 클래스
  */

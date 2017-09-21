@@ -56,7 +56,7 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                         switch (v.getId()) {
                             case R.id.btn_glide_test:
                                 Glide.with(SplashActivity.this)
-                                        .load("http://treegames.co.kr/test/uploads/temp.jpg")
+                                        .load("http://treegames.co.kr/test/uploads/temp3.jpg")
                                         .listener(new RequestListener<Drawable>() {
                                             @Override
                                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -71,7 +71,8 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                                         .thumbnail(0.5f)
                                         .apply(RequestOptions.centerCropTransform()
                                                 .circleCrop()
-                                                .signature(new ObjectKey(new SimpleDateFormat("yyyyMMdd").format(new Date())))
+                                                .placeholder(R.drawable.anim_image_loading)
+                                                .signature(new ObjectKey(new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())))
                                                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                                                 .error(R.drawable.img_error))
                                         .transition(DrawableTransitionOptions.withCrossFade())
@@ -104,10 +105,14 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                             case R.id.btn_library:
                                 startActivity(new Intent(SplashActivity.this, LibraryActivity.class));
                                 break;
+                            case R.id.btn_pager:
+                                startActivity(new Intent(SplashActivity.this, ImageViewActivity.class));
+                                break;
                         }
                     }
                 }, R.id.btn_glide_test, R.id.btn_dialog_test,
                         R.id.btn_realm, R.id.btn_test,
-                        R.id.btn_image, R.id.btn_library);
+                        R.id.btn_image, R.id.btn_library,
+                        R.id.btn_pager);
     }
 }

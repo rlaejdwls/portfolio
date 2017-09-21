@@ -82,6 +82,14 @@
             android:layout_below="@+id/btn_glide_test"
             android:layout_toRightOf="@+id/btn_image"
             android:layout_toEndOf="@+id/btn_image" />
+        <Button
+            android:id="@+id/btn_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_realm"
+            android:layout_toEndOf="@+id/btn_library"
+            android:layout_toRightOf="@+id/btn_library"
+            android:text="Pager" />
     </RelativeLayout>
 
     <RelativeLayout

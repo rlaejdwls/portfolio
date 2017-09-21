@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 /**
- * Created by needid on 2016-12-08.
+ * Created by Hwang on 2016-12-08.
  * 작성자 : 황의택
  * 내용 : 파일을 다루기 위한 유틸리티 클래스
  */

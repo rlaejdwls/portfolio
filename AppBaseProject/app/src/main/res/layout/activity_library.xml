@@ -13,4 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="문장 사이의 www.google.com 링크를 테스트"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit - Custom Parse"
+        android:id="@+id/btn_retrofit_custom"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit - Original Parse"
+        android:id="@+id/btn_retrofit_original"/>
 </LinearLayout>
