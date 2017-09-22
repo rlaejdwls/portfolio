@@ -34,7 +34,8 @@
                 <data android:mimeType="vnd.${applicationId}.web/vnd.${applicationId}.web" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ImageViewActivity" />
+        <activity android:name=".activities.ImageViewActivity"
+            android:theme="@style/AppTheme.FullScreen"/>
 
         <!-- Dialog -->
         <activity android:name=".dialog.SelectDialog"

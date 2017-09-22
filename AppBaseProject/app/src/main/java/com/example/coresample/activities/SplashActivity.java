@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.annotation.GlideExtension;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
@@ -37,7 +36,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@GlideExtension
+//@GlideExtension
 public class SplashActivity extends AppCompatActivity/* implements View.OnClickListener*/ {
     @Bind private TextView txtView01;
     @Bind private TextView txtView02;
@@ -73,7 +72,7 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                                                 .circleCrop()
                                                 .placeholder(R.drawable.anim_image_loading)
                                                 .signature(new ObjectKey(new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())))
-                                                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                                                .diskCacheStrategy(DiskCacheStrategy.ALL)
                                                 .error(R.drawable.img_error))
                                         .transition(DrawableTransitionOptions.withCrossFade())
                                         .into(imgTest);

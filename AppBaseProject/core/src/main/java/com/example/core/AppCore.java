@@ -7,7 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
 
 import com.example.core.manage.Config;
 import com.example.core.manage.Debugger;
@@ -38,6 +42,8 @@ public class AppCore extends Application {
     private boolean isBackground = false;
 
     private HashMap<Object, Object> commonData;
+    private Point point = new Point();
+    private float density;
     private Config config;
     private ORDBM ordbm;
 
@@ -157,6 +163,12 @@ public class AppCore extends Application {
         AppCore.appCore = this;
         //공통 데이터 저장소
         commonData = new HashMap();
+        //전역 정보
+        Display display = ((WindowManager)getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getSize(point);
+        display.getMetrics(outMetrics);
+        density = outMetrics.density;
     }
     @Override
     public void onLowMemory() {
@@ -220,5 +232,12 @@ public class AppCore extends Application {
         commonData.put("DIR_IMAGE", appCore.getApplicationContext().getFilesDir() + "/image");
     }
     protected void notifyBackground() {
+    }
+
+    public static int getScreenWidth() {
+        return appCore.point.x;
+    }
+    public static int getScreenHeight() {
+        return appCore.point.y;
     }
 }

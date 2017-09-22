@@ -11,7 +11,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
-            android:id="@+id/img_view"/>
+            android:id="@+id/img_view"
+            android:visibility="visible"/>
+        <com.example.coresample.widget.TouchImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:id="@+id/img_touch_view"/>
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
