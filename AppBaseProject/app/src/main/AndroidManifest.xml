@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".activities.ImageViewActivity"
             android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name=".activities.widget.WidgetListActivity" />
+        <activity android:name=".activities.widget.listview.expandable.ExpandableRecyclerViewActivity" />
 
         <!-- Dialog -->
         <activity android:name=".dialog.SelectDialog"

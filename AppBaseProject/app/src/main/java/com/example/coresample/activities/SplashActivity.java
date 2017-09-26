@@ -27,6 +27,7 @@ import com.example.core.util.StringUtils;
 import com.example.coresample.R;
 import com.example.coresample.activities.model.OptionModel;
 import com.example.coresample.activities.model.SelectItemModel;
+import com.example.coresample.activities.widget.WidgetListActivity;
 import com.example.coresample.dialog.GlobalDialog;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -107,11 +108,14 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                             case R.id.btn_pager:
                                 startActivity(new Intent(SplashActivity.this, ImageViewActivity.class));
                                 break;
+                            case R.id.btn_widget:
+                                startActivity(new Intent(SplashActivity.this, WidgetListActivity.class));
+                                break;
                         }
                     }
                 }, R.id.btn_glide_test, R.id.btn_dialog_test,
                         R.id.btn_realm, R.id.btn_test,
                         R.id.btn_image, R.id.btn_library,
-                        R.id.btn_pager);
+                        R.id.btn_pager, R.id.btn_widget);
     }
 }

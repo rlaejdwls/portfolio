@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.coresample.activities.ui.listview.sectionheader;
+package com.example.coresample.activities.widget.listview.sectionheader;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;

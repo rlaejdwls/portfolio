@@ -1,4 +1,4 @@
-package com.example.coresample.activities.ui.listview.sectionheader;
+package com.example.coresample.activities.widget.listview.sectionheader;
 
 import java.util.List;
 
