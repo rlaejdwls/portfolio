@@ -25,13 +25,13 @@ import com.example.core.fragment.NFragment;
 import com.example.core.manage.Binder;
 import com.example.core.manage.Logger;
 import com.example.core.manage.annotation.Bind;
-import com.example.coresample.widget.TouchImageView;
+import com.example.coresample.widget.imageview.multitouchzoom.view.MultiTouchZoomImageView;
 
 /**
  * Created by tigris on 2017-09-21.
  */
 public class ImageViewFragment extends NFragment {
-    @Bind private TouchImageView imgTouchView;
+    @Bind private MultiTouchZoomImageView imgTouchView;
     @Bind private ImageView imgView;
     @Bind private ProgressBar progress;
 

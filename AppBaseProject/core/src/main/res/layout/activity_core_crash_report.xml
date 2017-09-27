@@ -8,14 +8,14 @@
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lblTitle"
+        android:id="@+id/lbl_title"
         android:textAlignment="center"/>
 
     <TextView
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lblContent"
+        android:id="@+id/lbl_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"/>
 
@@ -28,14 +28,14 @@
             android:text="@string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnSubmitReport"
+            android:id="@+id/btn_submit_report"
             android:layout_weight="5"/>
 
         <Button
             android:text="@string/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnCancelReport"
+            android:id="@+id/btn_cancel_report"
             android:layout_weight="5"/>
 
     </LinearLayout>
@@ -48,7 +48,7 @@
             android:text=""
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/lblErrorContent" />
+            android:id="@+id/lbl_error_content" />
 
     </ScrollView>
 

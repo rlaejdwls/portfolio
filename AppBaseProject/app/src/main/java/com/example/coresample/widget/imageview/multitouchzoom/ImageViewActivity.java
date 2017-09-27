@@ -1,4 +1,4 @@
-package com.example.coresample.activities;
+package com.example.coresample.widget.imageview.multitouchzoom;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

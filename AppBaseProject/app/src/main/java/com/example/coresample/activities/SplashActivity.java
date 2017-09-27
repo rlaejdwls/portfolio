@@ -27,8 +27,9 @@ import com.example.core.util.StringUtils;
 import com.example.coresample.R;
 import com.example.coresample.activities.model.OptionModel;
 import com.example.coresample.activities.model.SelectItemModel;
-import com.example.coresample.activities.widget.WidgetListActivity;
+import com.example.coresample.widget.WidgetListActivity;
 import com.example.coresample.dialog.GlobalDialog;
+import com.example.coresample.widget.imageview.multitouchzoom.ImageViewActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

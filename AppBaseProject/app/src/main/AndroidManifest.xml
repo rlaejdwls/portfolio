@@ -34,10 +34,10 @@
                 <data android:mimeType="vnd.${applicationId}.web/vnd.${applicationId}.web" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ImageViewActivity"
+        <activity android:name=".widget.imageview.multitouchzoom.ImageViewActivity"
             android:theme="@style/AppTheme.FullScreen"/>
-        <activity android:name=".activities.widget.WidgetListActivity" />
-        <activity android:name=".activities.widget.listview.expandable.ExpandableRecyclerViewActivity" />
+        <activity android:name=".widget.WidgetListActivity" />
+        <activity android:name=".widget.listview.expandable.ExpandableRecyclerViewActivity" />
 
         <!-- Dialog -->
         <activity android:name=".dialog.SelectDialog"

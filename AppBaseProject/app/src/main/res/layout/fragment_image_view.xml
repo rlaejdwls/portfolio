@@ -13,7 +13,7 @@
             android:scaleType="fitCenter"
             android:id="@+id/img_view"
             android:visibility="visible"/>
-        <com.example.coresample.widget.TouchImageView
+        <com.example.coresample.widget.imageview.multitouchzoom.view.MultiTouchZoomImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"

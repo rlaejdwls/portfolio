@@ -1,4 +1,4 @@
-package com.example.coresample.activities.widget.listview.sectionheader;
+package com.example.coresample.widget.listview.sectionheader;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

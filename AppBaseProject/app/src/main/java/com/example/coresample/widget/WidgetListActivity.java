@@ -1,4 +1,4 @@
-package com.example.coresample.activities.widget;
+package com.example.coresample.widget;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.example.core.manage.Binder;
 import com.example.coresample.R;
-import com.example.coresample.activities.widget.listview.expandable.ExpandableRecyclerViewActivity;
+import com.example.coresample.widget.listview.expandable.ExpandableRecyclerViewActivity;
 
 /**
  * Created by tigris on 2017-09-26.

@@ -40,11 +40,11 @@ public class CrashReportDialog extends Activity implements OnClickListener {
             errorContent = getIntent().getStringExtra("errorContent");
         }
 
-        ((TextView) findViewById(R.id.lblTitle)).setText(getResources().getString(R.string.core_error_dialog_title));
-        ((TextView) findViewById(R.id.lblContent)).setText(getResources().getString(R.string.core_error_dialog_content));
-        ((TextView) findViewById(R.id.lblErrorContent)).setText(errorContent);
-        btnSubmitReport = (Button) findViewById(R.id.btnSubmitReport);
-        btnCancelReport = (Button) findViewById(R.id.btnCancelReport);
+        ((TextView) findViewById(R.id.lbl_title)).setText(getResources().getString(R.string.core_error_dialog_title));
+        ((TextView) findViewById(R.id.lbl_content)).setText(getResources().getString(R.string.core_error_dialog_content));
+        ((TextView) findViewById(R.id.lbl_error_content)).setText(errorContent);
+        btnSubmitReport = (Button) findViewById(R.id.btn_submit_report);
+        btnCancelReport = (Button) findViewById(R.id.btn_cancel_report);
         btnSubmitReport.setOnClickListener(this);
         btnCancelReport.setOnClickListener(this);
     }
@@ -52,7 +52,7 @@ public class CrashReportDialog extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {
         int i = v.getId();
-        if (i == R.id.btnSubmitReport) {
+        if (i == R.id.btn_submit_report) {
             new NFUploader().upload("app/api/upload", new OnUploadCompleteListener() {
                 @Override
                 public void onUploadComplete() {
@@ -71,7 +71,7 @@ public class CrashReportDialog extends Activity implements OnClickListener {
                     System.exit(1);
                 }
             });
-        } else if (i == R.id.btnCancelReport) {
+        } else if (i == R.id.btn_cancel_report) {
             System.exit(1);
         }
     }

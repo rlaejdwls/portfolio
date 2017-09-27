@@ -1,4 +1,4 @@
-package com.example.coresample.activities.widget.listview.multiplelayout;
+package com.example.coresample.widget.listview.multiplelayout;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
