@@ -122,5 +122,6 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup, 
         List<ExpandableChild> children = allItems.get(index).getChild();
         items.removeAll(children);
         notifyItemRangeRemoved(index + 1, children.size());
+        this.notifyAll();
     }
 }

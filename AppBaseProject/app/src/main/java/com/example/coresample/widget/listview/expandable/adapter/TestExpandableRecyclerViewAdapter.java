@@ -38,7 +38,7 @@ public class TestExpandableRecyclerViewAdapter extends ExpandableRecyclerViewAda
 
     @Override
     public void onBindViewHolder(ExpandableRecyclerViewAdapter.ViewHolder holder, int position) {
-        switch (getLayoutId(position)) {
+        switch (items.get(position).getLayoutId()) {
             case R.layout.item_list_exapndable_recycler_view_group:
                 ((GroupViewHolder) holder).bind((TestExpandableGroup) items.get(position));
                 break;
@@ -57,10 +57,6 @@ public class TestExpandableRecyclerViewAdapter extends ExpandableRecyclerViewAda
         @Override
         protected void onItemClick(View v) {
             super.onItemClick(v);
-//            if (onListItemClickListener != null) {
-//                onListItemClickListener.onListItemClick(v, getAdapterPosition(), items.get(getAdapterPosition()));
-//            }
-//            selectedIndex = getAdapterPosition();
         }
         public void bind(TestExpandableGroup group) {
             lblTitle.setText(group.getTitle());
@@ -75,10 +71,6 @@ public class TestExpandableRecyclerViewAdapter extends ExpandableRecyclerViewAda
         @Override
         protected void onItemClick(View v) {
             super.onItemClick(v);
-//            if (onListItemClickListener != null) {
-//                onListItemClickListener.onListItemClick(v, getAdapterPosition(), items.get(getAdapterPosition()));
-//            }
-//            selectedIndex = getAdapterPosition();
         }
         public void bind(TestExpandableChild child) {
             lblTitle.setText(child.getTitle());
