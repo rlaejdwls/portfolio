@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.core.manage.Binder;
+import com.example.coresample.widget.listview.expandable.event.OnGroupToggleListener;
 import com.example.coresample.widget.listview.expandable.model.ExpandableChild;
 import com.example.coresample.widget.listview.expandable.model.ExpandableGroup;
 
@@ -33,8 +34,14 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup>
     protected List<ExpandableChild> items = new ArrayList<>();
     protected List<GroupStatus> status = new ArrayList<>();
 
+    protected OnGroupToggleListener<EG> onGroupToggleListener;
+
     public ExpandableRecyclerViewAdapter(Context context) {
         this.context = context;
+    }
+
+    public void setOnGroupToggleListener(OnGroupToggleListener<EG> onGroupToggleListener) {
+        this.onGroupToggleListener = onGroupToggleListener;
     }
 
     @Override
@@ -117,37 +124,56 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup>
         protected void onItemClick(View v) {
             int index = getAdapterPosition();
             if (!(index < 0) && allItems.contains(items.get(index))) {
-                if (onGroupItemClick(v, index, items.get(index))) {
-                    toggle(index);
+                int groupIndex = getGroupIndex(index);
+                if (onGroupItemClick(v, index, items.get(index), status.get(groupIndex).isExpanded)) {
+                    toggle(groupIndex, index);
                 }
             } else if (!(index < 0)) {
                 onChildItemClick(v, index, items.get(index));
             }
         }
-        protected boolean onGroupItemClick(View v, int position, ExpandableChild item) {
+        protected boolean onGroupItemClick(View v, int position, ExpandableChild item, boolean isExpanded) {
             return true;
         }
         protected void onChildItemClick(View v, int position, ExpandableChild item) {}
     }
 
+    public int getGroupIndex(int index) {
+        return allItems.indexOf(items.get(index));
+    }
+    public int getItemIndex(ExpandableChild child) {
+        return items.indexOf(child);
+    }
+    public void toggle(ExpandableGroup group) {
+        toggle(getItemIndex(group));
+    }
     public void toggle(int index) {
-        int groupIndex = allItems.indexOf(items.get(index));
+        toggle(getGroupIndex(index), index);
+    }
+    public void toggle(int groupIndex, int index) {
         if (!status.get(groupIndex).isExpanded) {
             expand(groupIndex, index);
         } else {
             collapse(groupIndex, index);
         }
+        if (onGroupToggleListener != null) {
+            onGroupToggleListener.onGroupToggle(index, allItems.get(groupIndex), status.get(groupIndex).isExpanded);
+        }
     }
     public void expand(int groupIndex, int index) {
         status.get(groupIndex).isExpanded = true;
         List<ExpandableChild> children = allItems.get(groupIndex).getChild();
-        items.addAll(index + 1, children);
-        notifyItemRangeInserted(index + 1, children.size());
+        if (children != null) {
+            items.addAll(index + 1, children);
+            notifyItemRangeInserted(index + 1, children.size());
+        }
     }
     public void collapse(int groupIndex,int index) {
         status.get(groupIndex).isExpanded = false;
         List<ExpandableChild> children = allItems.get(groupIndex).getChild();
-        items.removeAll(children);
-        notifyItemRangeRemoved(index + 1, children.size());
+        if (children != null) {
+            items.removeAll(children);
+            notifyItemRangeRemoved(index + 1, children.size());
+        }
     }
 }

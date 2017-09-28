@@ -69,11 +69,11 @@ public class TestExpandableRecyclerViewAdapter extends ExpandableRecyclerViewAda
             super(itemView);
         }
         @Override
-        protected boolean onGroupItemClick(View v, int position, ExpandableChild item) {
+        protected boolean onGroupItemClick(View v, int position, ExpandableChild item, boolean isExpanded) {
             if (onGroupItemClickListener != null) {
                 onGroupItemClickListener.onListItemClick(v, position, item);
             }
-            return super.onGroupItemClick(v, position, item);
+            return super.onGroupItemClick(v, position, item, isExpanded);
         }
         public void bind(TestExpandableGroup group) {
             lblTitle.setText(group.getTitle());
