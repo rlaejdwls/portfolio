@@ -5,13 +5,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.example.core.manage.Binder;
 import com.example.core.manage.annotation.Bind;
 import com.example.coresample.R;
-import com.example.coresample.widget.listview.expandable.adapter.TestExpandableRecyclerViewAdapter;
-import com.example.coresample.widget.listview.expandable.model.TestExpandableChild;
-import com.example.coresample.widget.listview.expandable.model.TestExpandableGroup;
+import com.example.coresample.widget.listview.expandable.event.OnListItemClickListener;
+import com.example.coresample.widget.listview.expandable.sample.TestExpandableChild;
+import com.example.coresample.widget.listview.expandable.sample.TestExpandableGroup;
+import com.example.coresample.widget.listview.expandable.sample.TestExpandableRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,11 @@ public class ExpandableRecyclerViewActivity extends AppCompatActivity {
     private TestExpandableRecyclerViewAdapter adapter;
 
     @Bind private RecyclerView collection;
+
+    private OnListItemClickListener<TestExpandableGroup> onGroupItemClickListener = (v, position, obj) ->
+            Toast.makeText(ExpandableRecyclerViewActivity.this, "Group Click:" + obj.getTitle(), Toast.LENGTH_SHORT).show();
+    private OnListItemClickListener<TestExpandableChild> onChildItemClickListener = (v, position, obj) ->
+            Toast.makeText(ExpandableRecyclerViewActivity.this, "Child Click:" + obj.getTitle(), Toast.LENGTH_SHORT).show();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +57,8 @@ public class ExpandableRecyclerViewActivity extends AppCompatActivity {
         adapter = new TestExpandableRecyclerViewAdapter(this);
         adapter.setupItems(groups);
         adapter.notifyDataSetChanged();
+        adapter.setOnGroupItemClickListener(onGroupItemClickListener);
+        adapter.setOnChildItemClickListener(onChildItemClickListener);
 
         collection.setAdapter(adapter);
         collection.setHasFixedSize(true);

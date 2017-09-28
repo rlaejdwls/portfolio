@@ -1,5 +1,7 @@
 package com.example.coresample.widget.listview.expandable.model;
 
+import com.example.coresample.widget.listview.expandable.sample.TestExpandableGroup;
+
 import java.util.List;
 
 /**

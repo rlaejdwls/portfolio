@@ -1,4 +1,6 @@
-package com.example.coresample.widget.listview.expandable.model;
+package com.example.coresample.widget.listview.expandable.sample;
+
+import com.example.coresample.widget.listview.expandable.model.ExpandableGroup;
 
 import java.util.List;
 

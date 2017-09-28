@@ -1,7 +1,9 @@
-package com.example.coresample.widget.listview.expandable.model;
+package com.example.coresample.widget.listview.expandable.sample;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.coresample.widget.listview.expandable.model.ExpandableChild;
 
 /**
  * Created by tigris on 2017-09-26.

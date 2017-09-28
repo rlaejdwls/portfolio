@@ -13,8 +13,11 @@ import com.example.coresample.widget.listview.expandable.model.ExpandableGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup, EC extends ExpandableChild>
+public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup>
         extends RecyclerView.Adapter<ExpandableRecyclerViewAdapter.ViewHolder> {
+    public static final int TYPE_GROUP = -1;
+    public static final int TYPE_CHILD = -2;
+
     class GroupStatus {
         private int index;
         private boolean isExpanded;
@@ -44,39 +47,51 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup, 
     }
     @Override
     public int getItemViewType(int position) {
-        return position;
-        //
-//        return items.get(position).getLayoutId();
-        //
-//        if (allItems.contains(items.get(position))) {
-//            return TYPE_GROUP;
-//        } else {
-//            return TYPE_CHILD;
-//        }
-    }
-    public int getLayoutId(int position) {
-        return items.get(position).getLayoutId();
-    }
-    @Override
-    public ExpandableRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int position) {
         if (allItems.contains(items.get(position))) {
-            return onGroupCreateViewHolder(parent, position, items.get(position).getLayoutId());
+            return getGroupViewType(position);
         } else {
-            return onChildCreateViewHolder(parent, position, items.get(position).getLayoutId());
+            return getChildViewType(position);
         }
     }
-//    @Override
-//    public void onBindViewHolder(ExpandableRecyclerViewAdapter.ViewHolder holder, int position, List<Object> payloads) {
-//        super.onBindViewHolder(holder, position, payloads);
-//    }
+    public int getGroupViewType(int position) {
+        return TYPE_GROUP;
+    }
+    public int getChildViewType(int position) {
+        return TYPE_CHILD;
+    }
+    public boolean isGroup(int viewType) {
+        return viewType == TYPE_GROUP;
+    }
+    public boolean isChild(int viewType) {
+        return viewType == TYPE_CHILD;
+    }
 
-    abstract ExpandableRecyclerViewAdapter.ViewHolder onGroupCreateViewHolder(ViewGroup parent, int position, int layoutId);
-    abstract ExpandableRecyclerViewAdapter.ViewHolder onChildCreateViewHolder(ViewGroup parent, int position, int layoutId);
+    @Override
+    public ExpandableRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (isGroup(viewType)) {
+            return onGroupCreateViewHolder(parent, viewType);
+        } else if (isChild(viewType)){
+            return onChildCreateViewHolder(parent, viewType);
+        }
+        throw new IllegalArgumentException("viewType is not valid");
+    }
+    @Override
+    public void onBindViewHolder(ExpandableRecyclerViewAdapter.ViewHolder holder, int position) {
+        if (isGroup(getItemViewType(position))) {
+            onGroupBindViewHolder(holder, position);
+        } else if (isChild(getItemViewType(position))) {
+            onChildBindViewHolder(holder, position);
+        }
+    }
+
+    public abstract ExpandableRecyclerViewAdapter.ViewHolder onGroupCreateViewHolder(ViewGroup parent, int viewType);
+    public abstract ExpandableRecyclerViewAdapter.ViewHolder onChildCreateViewHolder(ViewGroup parent, int viewType);
+    public abstract void onGroupBindViewHolder(ExpandableRecyclerViewAdapter.ViewHolder holder, int position);
+    public abstract void onChildBindViewHolder(ExpandableRecyclerViewAdapter.ViewHolder holder, int position);
 
     protected View inflate(int resourceID, ViewGroup viewGroup) {
         return LayoutInflater.from(context).inflate(resourceID, viewGroup, false);
     }
-
     public void setupItems(List<EG> items) {
         allItems = items;
         List<ExpandableChild> visibleItems = new ArrayList<>();
@@ -100,28 +115,39 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup, 
             });
         }
         protected void onItemClick(View v) {
-            if (allItems.contains(items.get(getAdapterPosition()))) {
-//                Toast.makeText(context, "OnClickHeader", Toast.LENGTH_SHORT).show();
-                if (!status.get(getAdapterPosition()).isExpanded) {
-                    expand(getAdapterPosition());
-                } else {
-                    collapse(getAdapterPosition());
+            int index = getAdapterPosition();
+            if (!(index < 0) && allItems.contains(items.get(index))) {
+                if (onGroupItemClick(v, index, items.get(index))) {
+                    toggle(index);
                 }
+            } else if (!(index < 0)) {
+                onChildItemClick(v, index, items.get(index));
             }
         }
+        protected boolean onGroupItemClick(View v, int position, ExpandableChild item) {
+            return true;
+        }
+        protected void onChildItemClick(View v, int position, ExpandableChild item) {}
     }
 
-    public void expand(int index) {
-        status.get(index).isExpanded = true;
-        List<ExpandableChild> children = allItems.get(index).getChild();
+    public void toggle(int index) {
+        int groupIndex = allItems.indexOf(items.get(index));
+        if (!status.get(groupIndex).isExpanded) {
+            expand(groupIndex, index);
+        } else {
+            collapse(groupIndex, index);
+        }
+    }
+    public void expand(int groupIndex, int index) {
+        status.get(groupIndex).isExpanded = true;
+        List<ExpandableChild> children = allItems.get(groupIndex).getChild();
         items.addAll(index + 1, children);
         notifyItemRangeInserted(index + 1, children.size());
     }
-    public void collapse(int index) {
-        status.get(index).isExpanded = false;
-        List<ExpandableChild> children = allItems.get(index).getChild();
+    public void collapse(int groupIndex,int index) {
+        status.get(groupIndex).isExpanded = false;
+        List<ExpandableChild> children = allItems.get(groupIndex).getChild();
         items.removeAll(children);
         notifyItemRangeRemoved(index + 1, children.size());
-        this.notifyAll();
     }
 }
