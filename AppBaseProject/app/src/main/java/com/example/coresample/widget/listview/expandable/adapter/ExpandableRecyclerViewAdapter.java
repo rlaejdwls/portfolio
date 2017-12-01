@@ -109,6 +109,20 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup>
         }
         this.items = visibleItems;
     }
+    public void refresh() {
+        items.clear();
+        List<ExpandableChild> visibleItems = new ArrayList<>();
+
+        for (int i = 0; i < allItems.size(); i++) {
+            visibleItems.add(allItems.get(i));
+            if (status.get(i).isExpanded) {
+                if (allItems.get(i).getChildren() != null) {
+                    visibleItems.addAll(allItems.get(i).getChildren());
+                }
+            }
+        }
+        this.items = visibleItems;
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View view) {
@@ -162,7 +176,7 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup>
     }
     public void expand(int groupIndex, int index) {
         status.get(groupIndex).isExpanded = true;
-        List<ExpandableChild> children = allItems.get(groupIndex).getChild();
+        List<ExpandableChild> children = allItems.get(groupIndex).getChildren();
         if (children != null) {
             items.addAll(index + 1, children);
             notifyItemRangeInserted(index + 1, children.size());
@@ -170,7 +184,7 @@ public abstract class ExpandableRecyclerViewAdapter<EG extends ExpandableGroup>
     }
     public void collapse(int groupIndex,int index) {
         status.get(groupIndex).isExpanded = false;
-        List<ExpandableChild> children = allItems.get(groupIndex).getChild();
+        List<ExpandableChild> children = allItems.get(groupIndex).getChildren();
         if (children != null) {
             items.removeAll(children);
             notifyItemRangeRemoved(index + 1, children.size());

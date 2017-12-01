@@ -38,6 +38,7 @@
             android:theme="@style/AppTheme.FullScreen"/>
         <activity android:name=".widget.WidgetListActivity" />
         <activity android:name=".widget.listview.expandable.ExpandableRecyclerViewActivity" />
+        <activity android:name=".widget.viewpager.example.ViewPagerExampleActivity" />
 
         <!-- Dialog -->
         <activity android:name=".dialog.SelectDialog"

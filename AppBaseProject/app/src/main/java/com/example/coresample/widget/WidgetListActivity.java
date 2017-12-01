@@ -8,7 +8,9 @@ import android.view.View;
 
 import com.example.core.manage.Binder;
 import com.example.coresample.R;
+import com.example.coresample.widget.imageview.multitouchzoom.ImageViewActivity;
 import com.example.coresample.widget.listview.expandable.ExpandableRecyclerViewActivity;
+import com.example.coresample.widget.viewpager.example.ViewPagerExampleActivity;
 
 /**
  * Created by tigris on 2017-09-26.
@@ -18,7 +20,9 @@ public class WidgetListActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Binder.bind(this).onClick(
-                R.id.btn_expandable_recycler_view_activity
+                R.id.btn_expandable_recycler_view_activity,
+                R.id.btn_image_view_activity,
+                R.id.btn_view_pager_example_activity
         );
     }
     @Override
@@ -26,6 +30,12 @@ public class WidgetListActivity extends AppCompatActivity implements View.OnClic
         switch(v.getId()) {
             case R.id.btn_expandable_recycler_view_activity:
                 startActivity(ExpandableRecyclerViewActivity.class);
+                break;
+            case R.id.btn_image_view_activity:
+                startActivity(ImageViewActivity.class);
+                break;
+            case R.id.btn_view_pager_example_activity:
+                startActivity(ViewPagerExampleActivity.class);
                 break;
         }
     }

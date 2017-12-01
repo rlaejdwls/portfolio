@@ -13,6 +13,7 @@ public class Debugger {
     public static boolean DEBUG = false;
 
     /**
+     * 초기화 함수
      * @param context Application Context
      */
     public static void initialize(Context context) {

@@ -16,6 +16,8 @@ android {
         }
     }
     buildTypes {
+        debug {
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -24,6 +26,34 @@ android {
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+        dev {
+            minSdkVersion 21
+            aaptOptions.cruncherEnabled = false
+            resConfigs "ko", "xxhdpi"
+        }
+        prd {
+        }
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            universalApk false
+        }
+    }
+    android.variantFilter { variant ->
+        def buildName = variant.buildType.name;
+        def flavorName = variant.getFlavors().get(0).name;
+
+        if (flavorName == 'dev' && buildName == 'release'
+                || flavorName == 'prd' && buildName == 'debug') {
+            variant.setIgnore(true);
+        }
+
+        splits.abi.enable = (flavorName == 'prd');
     }
 }
 

@@ -4,9 +4,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:id="@+id/btn_expandable_recycler_view_activity"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Expandable Recycler View Activity" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_expandable_recycler_view_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expandable Recycler View Activity" />
+            <Button
+                android:id="@+id/btn_image_view_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Image View Activity" />
+            <Button
+                android:id="@+id/btn_view_pager_example_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ViewPager Example Activity" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
