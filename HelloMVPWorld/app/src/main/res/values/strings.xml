@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HelloMVPWorld</string>
+
+    <string name="btn_search">검색</string>
+</resources>
