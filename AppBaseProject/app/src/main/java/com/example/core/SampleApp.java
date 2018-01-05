@@ -1,8 +1,5 @@
 package com.example.core;
 
-import android.app.AlarmManager;
-import android.content.Context;
-
 import com.example.core.manage.Logger;
 
 /**
@@ -19,8 +16,8 @@ public class SampleApp extends AppCore {
         super.notifyForeground();
         Logger.d("");
 
-        AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        alarm.setTimeZone("Asia/Seoul");
+//        AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//        alarm.setTimeZone("Asia/Seoul");
 
         this.put("DIR_LOG", SampleApp.getApplication().getApplicationContext().getFilesDir() + "/log/log");
         this.put("DIR_ERROR", SampleApp.getApplication().getFilesDir() + "/log/error");

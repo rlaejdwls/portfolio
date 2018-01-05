@@ -1,11 +1,17 @@
 package com.example.coresample.activities;
 
+import android.Manifest;
+import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,24 +25,22 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.signature.ObjectKey;
+import com.example.core.AppCore;
 import com.example.core.event.OnSingleClickListener;
 import com.example.core.manage.Binder;
-import com.example.core.manage.Logger;
 import com.example.core.manage.annotation.Bind;
 import com.example.core.util.StringUtils;
 import com.example.coresample.R;
-import com.example.coresample.activities.model.OptionModel;
-import com.example.coresample.activities.model.SelectItemModel;
-import com.example.coresample.widget.WidgetListActivity;
 import com.example.coresample.dialog.GlobalDialog;
+import com.example.coresample.utils.FileUtil;
+import com.example.coresample.widget.WidgetListActivity;
 import com.example.coresample.widget.imageview.multitouchzoom.ImageViewActivity;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 //@GlideExtension
 public class SplashActivity extends AppCompatActivity/* implements View.OnClickListener*/ {
@@ -89,16 +93,44 @@ public class SplashActivity extends AppCompatActivity/* implements View.OnClickL
                                 startActivity(new Intent(SplashActivity.this, RealmActivity.class));
                                 break;
                             case R.id.btn_test:
-                                List<SelectItemModel> items = new ArrayList<>();
-                                items.add(new SelectItemModel("1", "Normal", 480, true));
-                                items.add(new SelectItemModel("2", "High", 720, false));
-                                items.add(new SelectItemModel("3", "Very High", 1080, false));
+                                TedPermission.with(SplashActivity.this)
+                                        .setPermissionListener(new PermissionListener() {
+                                            @Override
+                                            public void onPermissionGranted() {
+                                                String url = "https://file.tigrison.com/file/download/8619922511673ddab6d395d1eb60940b/1";
+                                                String cookie = "_tigris_sid=fe2844854185b21cc21ee825a0cb10a7;domain=tigrison.com;path=/";
+                                                String fileName = "error_20171207.log.txt";
 
-                                List<OptionModel> options = new ArrayList<>();
-                                options.add(new OptionModel(items, new String[] { "1" }, "radio", "Set image quality"));
+                                                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 
-                                String json = new Gson().toJson(options, new TypeToken<List<OptionModel>>() {}.getType());
-                                Logger.d(json);
+                                                request.addRequestHeader("Cookie", cookie);
+                                                request.setDescription("Tigris Downlaod");
+                                                request.setTitle(fileName);
+                                                String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(FileUtil.getExtension(fileName));
+                                                request.setMimeType(mimeType);
+                                                request.allowScanningByMediaScanner();
+                                                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                                                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
+
+                                                // get download service and enqueue file
+                                                DownloadManager manager = (DownloadManager) AppCore.getApplication().getSystemService(Context.DOWNLOAD_SERVICE);
+                                                manager.enqueue(request);
+                                            }
+                                            @Override
+                                            public void onPermissionDenied(ArrayList<String> deniedPermissions) {}
+                                        })
+                                        .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                                        .check();
+//                                List<SelectItemModel> items = new ArrayList<>();
+//                                items.add(new SelectItemModel("1", "Normal", 480, true));
+//                                items.add(new SelectItemModel("2", "High", 720, false));
+//                                items.add(new SelectItemModel("3", "Very High", 1080, false));
+//
+//                                List<OptionModel> options = new ArrayList<>();
+//                                options.add(new OptionModel(items, new String[] { "1" }, "radio", "Set image quality"));
+//
+//                                String json = new Gson().toJson(options, new TypeToken<List<OptionModel>>() {}.getType());
+//                                Logger.d(json);
                                 break;
                             case R.id.btn_image:
                                 startActivity(new Intent(SplashActivity.this, ImageActivity.class));

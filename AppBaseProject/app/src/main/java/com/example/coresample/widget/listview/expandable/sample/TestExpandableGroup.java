@@ -26,7 +26,7 @@ public class TestExpandableGroup implements ExpandableGroup {
         this.title = title;
     }
     @Override
-    public List<TestExpandableChild> getChild() {
+    public List<TestExpandableChild> getChildren() {
         return child;
     }
     public void setChild(List<TestExpandableChild> child) {

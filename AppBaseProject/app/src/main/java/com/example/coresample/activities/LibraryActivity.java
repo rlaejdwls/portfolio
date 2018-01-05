@@ -17,7 +17,7 @@ import com.example.core.manage.annotation.Bind;
 import com.example.coresample.R;
 import com.example.coresample.activities.restful.converter.TestDeserializer;
 import com.example.coresample.activities.restful.model.TestModel;
-import com.example.coresample.activities.restful.service.TestJsonService;
+import com.example.coresample.activities.restful.service.DefaultService;
 import com.example.coresample.utils.Performance;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -121,7 +121,7 @@ public class LibraryActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_retrofit_custom:
                 Performance.get().start();
-                TestJsonService service1 = retrofit.create(TestJsonService.class);
+                DefaultService.TestJsonService service1 = retrofit.create(DefaultService.TestJsonService.class);
                 service1.test1().enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -150,7 +150,7 @@ public class LibraryActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.btn_retrofit_original:
                 Performance.get().start();
-                TestJsonService service2 = retrofit.create(TestJsonService.class);
+                DefaultService.TestJsonService service2 = retrofit.create(DefaultService.TestJsonService.class);
                 service2.test2().enqueue(new Callback<List<TestModel>>() {
                     @Override
                     public void onResponse(Call<List<TestModel>> call, Response<List<TestModel>> response) {

@@ -79,8 +79,8 @@ public class Binder {
                     try {
                         Field field = container.getClass().getDeclaredField(key);
                         field.setAccessible(true);
-                        Param param = field.getAnnotation(Param.class);
-                        if (param != null) {
+                        Param bundleField = field.getAnnotation(Param.class);
+                        if (bundleField != null) {
                             if (container.getClass().isPrimitive()) {
                                 switch (field.getType().getSimpleName()) {
                                     case "boolean":
@@ -121,7 +121,7 @@ public class Binder {
         }
         public BindManager onClick(View... views) {
             if (container instanceof View.OnClickListener) {
-                return onClick((View.OnClickListener) container, views);
+                onClick((View.OnClickListener) container, views);
             }
             return this;
         }
@@ -135,6 +135,25 @@ public class Binder {
         public BindManager onClick(View.OnClickListener container, View... views) {
             for (View view : views) {
                 view.setOnClickListener(container);
+            }
+            return this;
+        }
+        public BindManager onLongClick(int... ids) {
+            View[] views =  new View[ids.length];
+            for (int i = 0; i < ids.length; i++) {
+                views[i] = root.findViewById(ids[i]);
+            }
+            return onLongClick(views);
+        }
+        public BindManager onLongClick(View... views) {
+            if (container instanceof View.OnLongClickListener) {
+                onLongClick((View.OnLongClickListener) container, views);
+            }
+            return this;
+        }
+        public BindManager onLongClick(View.OnLongClickListener container, View... views) {
+            for (View view : views) {
+                view.setOnLongClickListener(container);
             }
             return this;
         }
@@ -165,13 +184,25 @@ public class Binder {
     public static BindManager bind(Activity container) {
         return bind(container, "activity", true);
     }
+    public static BindManager bind(Activity container, boolean isSetContentView) {
+        return bind(container, "activity", isSetContentView);
+    }
     public static BindManager bind(Activity container, String prefix, boolean isSetContentView) {
+        int layoutResId = 0;
         if (isSetContentView) {
-            container.setContentView(container.getResources().getIdentifier(prefix +
-                            StringUtils.toAlias(container.getClass().getSimpleName()
-                                    .replace(StringUtils.toAlias("_" + prefix), "")),
-                    "layout", container.getPackageName()));
+            layoutResId = container.getResources().getIdentifier(prefix +
+                            StringUtils.toAlias(container.getClass().getSimpleName())
+                                    .replace("_" + prefix, ""),
+                    "layout", container.getPackageName());
         }
+        if (layoutResId == 0) {
+            return bind(container.getWindow().getDecorView(), container);
+        } else {
+            return bind(container, layoutResId);
+        }
+    }
+    public static BindManager bind(Activity container, int layoutResId) {
+        container.setContentView(layoutResId);
         return bind(container.getWindow().getDecorView(), container);
     }
     public static BindManager bind(View root, Object container) {

@@ -47,6 +47,21 @@ public class FileUtil {
         }
         return url;
     }
+    public static String getExtension(File file) {
+        return getExtension(file.getAbsolutePath());
+    }
+    public static String getExtension(String path) {
+        if (path != null) {
+            int lastIndexOf = path.lastIndexOf(".");
+            if (lastIndexOf != -1) {
+                return path.substring(lastIndexOf + 1);
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
     public static void copy(String inFileName, String outFileName) throws Exception{
         copy(new File(inFileName), new File(outFileName));
     }
