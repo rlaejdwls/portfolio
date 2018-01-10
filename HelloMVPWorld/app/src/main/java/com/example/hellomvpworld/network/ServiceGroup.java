@@ -14,6 +14,6 @@ import rx.Observable;
  * Description :
  */
 public interface ServiceGroup {
-    @GET("")
+    @GET("/test/test_json.php")
     Observable<List<User>> getUsers(@Query("age") int age);
 }

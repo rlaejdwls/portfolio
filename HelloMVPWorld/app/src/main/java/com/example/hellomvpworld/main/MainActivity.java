@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.example.hellomvpworld.R;
+import com.example.hellomvpworld.data.source.UsersRepository;
+import com.example.hellomvpworld.data.source.remote.UsersRemoteDataSource;
 import com.example.hellomvpworld.util.ActivityUtils;
 
 /**
@@ -35,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Create the presenter
         presenter = new MainPresenter(
-
+                UsersRepository.getInstance(UsersRemoteDataSource.getInstance()),
+                fragment
         );
 
         // Load previously saved state, if available.
